@@ -1,0 +1,81 @@
+; Sat Nov 28 17:01:18 CET 2020
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+([practica2_Class1] of  Epoca
+
+	(epoca "Moderna"))
+
+([practica2_Class5] of  Epoca
+
+	(epoca "Contemporanea"))
+
+([practica2_Class76] of  Autor
+
+	(epocaPintor [practica2_Class5])
+	(estilAutor [practica2_Class79])
+	(nacionalitat "Peru")
+	(nom "Luisillo de Macaco"))
+
+([practica2_Class79] of  Estil
+
+	(estils "Barroc"))
+
+([practica2_Class80] of  Estil
+
+	(estils "Cubisme"))
+
+([practica2_Class82] of  Estil
+
+	(estils "Renaixement"))
+
+([practica2_Class83] of  Estil
+
+	(estils "Romanic"))
+
+([practica2_Class84] of  Mida
+
+	(alcada 10.0)
+	(amplada 10.0)
+	(profunditat 2.0))
+
+([practica2_Class90] of  Obra
+
+	(anyCreacio 2020)
+	(autorObra [practica2_Class76])
+	(complexitat 10)
+	(epocaObra [practica2_Class5])
+	(estilObra [practica2_Class79])
+	(midaObra [practica2_Class84])
+	(nomObra "Achanta")
+	(rellevancia 10)
+	(salaObra [practica2_Class91]))
+
+([practica2_Class91] of  SalaAutor
+
+	(autorSala [practica2_Class76]))
+
+([practica2_Class92] of  SalaCronologica
+
+	(epocaSala [practica2_Class5]))
+
+([practica2_Class93] of  SalaTematica
+
+	(tematicaSala [practica2_Class97]))
+
+([practica2_Class94] of  Tematica
+
+	(tematica "Amor"))
+
+([practica2_Class95] of  Tematica
+
+	(tematica "Odi"))
+
+([practica2_Class96] of  Tematica
+
+	(tematica "Retrat"))
+
+([practica2_Class97] of  Tematica
+
+	(tematica "Paisatge"))

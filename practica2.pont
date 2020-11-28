@@ -1,0 +1,257 @@
+; Sat Nov 28 17:01:18 CET 2020
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot epocaSala
+		(type INSTANCE)
+;+		(allowed-classes Epoca)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot salaObra
+		(type INSTANCE)
+;+		(allowed-classes Sala)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot autorObra
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot midaObra
+		(type INSTANCE)
+;+		(allowed-classes Mida)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tematicaSala
+		(type INSTANCE)
+;+		(allowed-classes Tematica)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot autorSala
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot anyCreacio
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nacionalitat
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tematica
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot estilAutor
+		(type INSTANCE)
+;+		(allowed-classes Estil)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nom
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot estilObra
+		(type INSTANCE)
+;+		(allowed-classes Estil)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot amplada
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot epocaObra
+		(type INSTANCE)
+;+		(allowed-classes Epoca)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot epoca
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot rellevancia
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot practica2_Class3
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot KB_120706_Class51
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot KB_120706_Class53
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot epocaPintor
+		(type INSTANCE)
+;+		(allowed-classes Epoca)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot complexitat
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot estils
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot profunditat
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nomObra
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot alcada
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Autor
+	(is-a USER)
+	(role concrete)
+	(single-slot estilAutor
+		(type INSTANCE)
+;+		(allowed-classes Estil)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot epocaPintor
+		(type INSTANCE)
+;+		(allowed-classes Epoca)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nom
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nacionalitat
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Estil
+	(is-a USER)
+	(role concrete)
+	(single-slot estils
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Mida
+	(is-a USER)
+	(role concrete)
+	(single-slot alcada
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot amplada
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot profunditat
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Obra
+	(is-a USER)
+	(role concrete)
+	(single-slot epocaObra
+		(type INSTANCE)
+;+		(allowed-classes Epoca)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot salaObra
+		(type INSTANCE)
+;+		(allowed-classes Sala)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot autorObra
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot midaObra
+		(type INSTANCE)
+;+		(allowed-classes Mida)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot rellevancia
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot complexitat
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot estilObra
+		(type INSTANCE)
+;+		(allowed-classes Estil)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot anyCreacio
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nomObra
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Sala
+	(is-a USER)
+	(role abstract))
+
+(defclass SalaAutor
+	(is-a Sala)
+	(role concrete)
+	(single-slot autorSala
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass SalaCronologica
+	(is-a Sala)
+	(role concrete)
+	(single-slot epocaSala
+		(type INSTANCE)
+;+		(allowed-classes Epoca)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass SalaTematica
+	(is-a Sala)
+	(role concrete)
+	(single-slot tematicaSala
+		(type INSTANCE)
+;+		(allowed-classes Tematica)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Tematica
+	(is-a USER)
+	(role concrete)
+	(single-slot tematica
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Epoca
+	(is-a USER)
+	(role concrete)
+	(single-slot epoca
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
