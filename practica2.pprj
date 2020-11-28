@@ -1,4 +1,4 @@
-; Sat Nov 28 17:01:18 CET 2020
+; Sat Nov 28 21:55:47 CET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -21,18 +21,18 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[practica2_ProjectKB_Class99]
-		[practica2_ProjectKB_Class100]
-		[practica2_ProjectKB_Class10101]
-		[practica2_ProjectKB_Class10102]
-		[practica2_ProjectKB_Class10103]
-		[practica2_ProjectKB_Class10104]
-		[practica2_ProjectKB_Class10105]
-		[practica2_ProjectKB_Class10106]
-		[practica2_ProjectKB_Class10107]
-		[practica2_ProjectKB_Class10108]
-		[practica2_ProjectKB_Class10109]
-		[practica2_ProjectKB_Class10110]))
+		[practica2_ProjectKB_Class77]
+		[practica2_ProjectKB_Class78]
+		[practica2_ProjectKB_Class79]
+		[practica2_ProjectKB_Class80]
+		[practica2_ProjectKB_Class81]
+		[practica2_ProjectKB_Class82]
+		[practica2_ProjectKB_Class83]
+		[practica2_ProjectKB_Class84]
+		[practica2_ProjectKB_Class85]
+		[practica2_ProjectKB_Class86]
+		[practica2_ProjectKB_Class87]
+		[practica2_ProjectKB_Class88]))
 
 ([CLSES_TAB] of  Widget
 
@@ -74,7 +74,7 @@
 
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
 
-([KB_564835_Class2] of  Map
+([KB_629756_Class2] of  Map
 )
 
 ([KB_789627_Class0] of  String
@@ -84,8 +84,8 @@
 
 ([KB_789627_Class1] of  Map
 
-	(entries [practica2_ProjectKB_Class10112])
-	(referenced_maps [practica2_ProjectKB_Class10111]))
+	(entries [practica2_ProjectKB_Class90])
+	(referenced_maps [practica2_ProjectKB_Class89]))
 
 ([KB_789627_Class100] of  String
 
@@ -260,74 +260,9 @@
 ([practica2_ProjectKB_Class10] of  Property_List
 )
 
-([practica2_ProjectKB_Class100] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
 ([practica2_ProjectKB_Class101] of  String
 
 	(name "SearchTab_Query"))
-
-([practica2_ProjectKB_Class10101] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([practica2_ProjectKB_Class10102] of  String
-
-	(name "Obra")
-	(string_value "nomObra"))
-
-([practica2_ProjectKB_Class10103] of  String
-
-	(name "Mida")
-	(string_value "alcada{}amplada{}profunditat"))
-
-([practica2_ProjectKB_Class10104] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([practica2_ProjectKB_Class10105] of  String
-
-	(name "SalaTematica")
-	(string_value "tematicaSala"))
-
-([practica2_ProjectKB_Class10106] of  String
-
-	(name "Autor")
-	(string_value "nom"))
-
-([practica2_ProjectKB_Class10107] of  String
-
-	(name "SalaCronologica")
-	(string_value "epocaSala"))
-
-([practica2_ProjectKB_Class10108] of  String
-
-	(name "Epoca")
-	(string_value "epoca"))
-
-([practica2_ProjectKB_Class10109] of  String
-
-	(name "Estil")
-	(string_value "estils"))
-
-([practica2_ProjectKB_Class10110] of  String
-
-	(name "Tematica")
-	(string_value "tematica"))
-
-([practica2_ProjectKB_Class10111] of  Map
-)
-
-([practica2_ProjectKB_Class10112] of  Map_Entry
-
-	(key "InstanceDisplay.yellow_stickies")
-	(key_class "java.lang.String")
-	(value "practica2_ProjectKB_Class10111")
-	(value_class "java.util.Map"))
 
 ([practica2_ProjectKB_Class11] of  Widget
 
@@ -657,7 +592,70 @@
 ([practica2_ProjectKB_Class76] of  Property_List
 )
 
+([practica2_ProjectKB_Class77] of  String
+
+	(name "Mida")
+	(string_value "alcada{}amplada{}profunditat"))
+
+([practica2_ProjectKB_Class78] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([practica2_ProjectKB_Class79] of  String
+
+	(name "SalaTematica")
+	(string_value "tematicaSala"))
+
 ([practica2_ProjectKB_Class8] of  Property_List
+)
+
+([practica2_ProjectKB_Class80] of  String
+
+	(name "SalaAutor")
+	(string_value "autorSala"))
+
+([practica2_ProjectKB_Class81] of  String
+
+	(name "Autor")
+	(string_value "nom"))
+
+([practica2_ProjectKB_Class82] of  String
+
+	(name "SalaCronologica")
+	(string_value "epocaSala"))
+
+([practica2_ProjectKB_Class83] of  String
+
+	(name "Epoca")
+	(string_value "epoca"))
+
+([practica2_ProjectKB_Class84] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([practica2_ProjectKB_Class85] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([practica2_ProjectKB_Class86] of  String
+
+	(name "Estil")
+	(string_value "estil"))
+
+([practica2_ProjectKB_Class87] of  String
+
+	(name "Tematica")
+	(string_value "tematica"))
+
+([practica2_ProjectKB_Class88] of  String
+
+	(name "Obra")
+	(string_value "nomObra"))
+
+([practica2_ProjectKB_Class89] of  Map
 )
 
 ([practica2_ProjectKB_Class9] of  Widget
@@ -666,40 +664,12 @@
 	(property_list [practica2_ProjectKB_Class10])
 	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
 
-([practica2_ProjectKB_Class93] of  Widget
+([practica2_ProjectKB_Class90] of  Map_Entry
 
-	(is_hidden FALSE)
-	(name "Preferencies")
-	(property_list [practica2_ProjectKB_Class94])
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([practica2_ProjectKB_Class94] of  Property_List
-
-	(properties [practica2_ProjectKB_Class95]))
-
-([practica2_ProjectKB_Class95] of  Property_List
-
-	(name "layout properties"))
-
-([practica2_ProjectKB_Class96] of  Widget
-
-	(is_hidden FALSE)
-	(name "Visitant")
-	(property_list [practica2_ProjectKB_Class97])
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([practica2_ProjectKB_Class97] of  Property_List
-
-	(properties [practica2_ProjectKB_Class98]))
-
-([practica2_ProjectKB_Class98] of  Property_List
-
-	(name "layout properties"))
-
-([practica2_ProjectKB_Class99] of  String
-
-	(name "SalaAutor")
-	(string_value "autorSala"))
+	(key "InstanceDisplay.yellow_stickies")
+	(key_class "java.lang.String")
+	(value "practica2_ProjectKB_Class89")
+	(value_class "java.util.Map"))
 
 ([PROJECT] of  Project
 

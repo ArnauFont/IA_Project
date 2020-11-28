@@ -1,4 +1,4 @@
-; Sat Nov 28 17:01:18 CET 2020
+; Sat Nov 28 21:55:47 CET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -101,12 +101,12 @@
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot estils
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot profunditat
 		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot estil
+		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot nomObra
@@ -143,7 +143,7 @@
 (defclass Estil
 	(is-a USER)
 	(role concrete)
-	(single-slot estils
+	(single-slot estil
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))

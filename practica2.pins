@@ -1,4 +1,4 @@
-; Sat Nov 28 17:01:18 CET 2020
+; Sat Nov 28 21:55:47 CET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,19 +20,19 @@
 
 ([practica2_Class79] of  Estil
 
-	(estils "Barroc"))
+	(estil "Barroc"))
 
 ([practica2_Class80] of  Estil
 
-	(estils "Cubisme"))
+	(estil "Cubisme"))
 
 ([practica2_Class82] of  Estil
 
-	(estils "Renaixement"))
+	(estil "Renaixement"))
 
 ([practica2_Class83] of  Estil
 
-	(estils "Romanic"))
+	(estil "Romanic"))
 
 ([practica2_Class84] of  Mida
 

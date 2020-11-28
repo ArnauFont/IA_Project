@@ -145,7 +145,7 @@
     (assert (preferencies-grup(autors ?autors-resposta)))
 )
 
-(defrule get-info-grup::preguntar-preferencies-epoques "Pregunta les preferencies de epoques del grup"
+(defrule get-info-grup::preguntar-preferencies-epoques "Pregunta les preferencies d'epoques del grup"
     ?preferencies <- (preferencies-grup)
     (preferencies-grup (epoques-preguntat ?epoques-preguntat))
     (test (< ?epoques-preguntat 0))
@@ -168,5 +168,49 @@
     )
     (modify ?preferencies (epoques $?epoques-resposta) (epoques-preguntat 1))
 )
-
-
+(defrule get-info-grup::preguntar-preferencies-estils "Pregunta les preferencies d'estils del grup"
+    ?preferencies <- (preferencies-grup)
+    (preferencies-grup (estils-preguntat ?estils-preguntat))
+    (test (< ?estils-preguntat 0))
+    =>
+    (bind $?obj-estils (find-all-instances ((?inst Estil)) TRUE))
+    (bind $?nom-estils (create$ ))
+    (loop-for-count (?i 1 (length$ $?obj-estils)) do
+        (bind ?estil-actual (nth$ ?i ?obj-estils))
+        (bind ?nom-estil (send ?estil-actual get-estil))
+        (bind $?nom-estils (insert$ $?nom-estils (+ (length$ $?nom-estils) 1) ?nom-estil))
+    )
+    
+    (bind ?resposta (pregunta-multi-resposta "Escull quin dels estils preferiu (multi-resposta; 0 si cap): " ?nom-estils))
+    
+    (bind $?estils-resposta (create$ ))
+    (loop-for-count(?i 1 (length$ ?resposta)) do
+        (bind ?index (nth$ ?i ?resposta))
+        (bind ?actual-estil (nth$ ?index ?obj-estils))
+        (bind $?estils-resposta (insert$ $?estils-resposta (+ (length$ $?estils-resposta) 1) ?actual-estil))
+    )
+    (modify ?preferencies (estils $?estils-resposta) (estils-preguntat 1))
+)
+(defrule get-info-grup::preguntar-preferencies-tematiques "Pregunta les preferencies de tematiques del grup"
+    ?preferencies <- (preferencies-grup)
+    (preferencies-grup (tematiques-preguntat ?tematiques-preguntat))
+    (test (< ?tematiques-preguntat 0))
+    =>
+    (bind $?obj-tematiques (find-all-instances ((?inst Tematica)) TRUE))
+    (bind $?nom-tematiques (create$ ))
+    (loop-for-count (?i 1 (length$ $?obj-tematiques)) do
+        (bind ?tematica-actual (nth$ ?i ?obj-tematiques))
+        (bind ?nom-tematica (send ?tematica-actual get-tematica))
+        (bind $?nom-tematiques (insert$ $?nom-tematiques (+ (length$ $?nom-tematiques) 1) ?nom-tematica))
+    )
+    
+    (bind ?resposta (pregunta-multi-resposta "Escull quina de les tematiques preferiu (multi-resposta; 0 si cap): " ?nom-tematiques))
+    
+    (bind $?tematiques-resposta (create$ ))
+    (loop-for-count(?i 1 (length$ ?resposta)) do
+        (bind ?index (nth$ ?i ?resposta))
+        (bind ?actual-tematica (nth$ ?index ?obj-tematiques))
+        (bind $?tematiques-resposta (insert$ $?tematiques-resposta (+ (length$ $?tematiques-resposta) 1) ?actual-tematica))
+    )
+    (modify ?preferencies (tematiques $?tematiques-resposta) (tematiques-preguntat 1))
+)
