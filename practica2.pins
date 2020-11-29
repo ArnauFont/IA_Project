@@ -1,4 +1,4 @@
-; Sat Nov 28 21:55:47 CET 2020
+; Sun Nov 29 20:06:31 CET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -6,6 +6,346 @@
 ([practica2_Class1] of  Epoca
 
 	(epoca "Moderna"))
+
+([practica2_Class10001] of  Tematica
+
+	(tematica "Carrers"))
+
+([practica2_Class10002] of  Tematica
+
+	(tematica "Noblesa"))
+
+([practica2_Class10003] of  Tematica
+
+	(tematica "Fruita"))
+
+([practica2_Class10004] of  Tematica
+
+	(tematica "Mitologia"))
+
+([practica2_Class10005] of  Tematica
+
+	(tematica "Religio"))
+
+([practica2_Class10006] of  Tematica
+
+	(tematica "Naturalesa"))
+
+([practica2_Class10007] of  SalaTematica
+
+	(tematicaSala [practica2_Class94]))
+
+([practica2_Class10008] of  SalaTematica
+
+	(tematicaSala [practica2_Class10006]))
+
+([practica2_Class10009] of  SalaTematica
+
+	(tematicaSala [practica2_Class10005]))
+
+([practica2_Class10011] of  Epoca
+
+	(epoca "Baixa Edat Mitjana"))
+
+([practica2_Class10012] of  Epoca
+
+	(epoca "Alta Edat Mitjana"))
+
+([practica2_Class10013] of  Epoca
+
+	(epoca "Art Antic"))
+
+([practica2_Class10015] of  Estil
+
+	(estil "Expressionisme"))
+
+([practica2_Class10016] of  Estil
+
+	(estil "Gotic"))
+
+([practica2_Class10017] of  Estil
+
+	(estil "Manierisme"))
+
+([practica2_Class10018] of  Estil
+
+	(estil "Rococo"))
+
+([practica2_Class10019] of  Estil
+
+	(estil "Preromanic"))
+
+([practica2_Class10020] of  Mida
+
+	(alcada 15)
+	(amplada 15))
+
+([practica2_Class10021] of  Mida
+
+	(alcada 50)
+	(amplada 70))
+
+([practica2_Class10022] of  Mida
+
+	(alcada 50)
+	(amplada 90))
+
+([practica2_Class10023] of  Mida
+
+	(alcada 90)
+	(amplada 70))
+
+([practica2_Class10024] of  Mida
+
+	(alcada 100)
+	(amplada 100))
+
+([practica2_Class10025] of  Mida
+
+	(alcada 100)
+	(amplada 200))
+
+([practica2_Class10026] of  Mida
+
+	(alcada 100)
+	(amplada 150))
+
+([practica2_Class10027] of  Mida
+
+	(alcada 150)
+	(amplada 150))
+
+([practica2_Class10028] of  Mida
+
+	(alcada 200)
+	(amplada 200))
+
+([practica2_Class10029] of  Mida
+
+	(alcada 200)
+	(amplada 300))
+
+([practica2_Class10030] of  Autor
+
+	(epocaPintor [practica2_Class10013])
+	(estilAutor [practica2_Class10018])
+	(nacionalitat "Marroc")
+	(nom "Al Ramar Abdul Tula"))
+
+([practica2_Class10031] of  Autor
+
+	(epocaPintor [practica2_Class5])
+	(estilAutor [practica2_Class10015])
+	(nacionalitat "España")
+	(nom "Aitor Menta"))
+
+([practica2_Class10032] of  Autor
+
+	(epocaPintor [practica2_Class5])
+	(estilAutor [practica2_Class10018])
+	(nacionalitat "Regne Unit")
+	(nom "Marcos Van Gal"))
+
+([practica2_Class10033] of  Autor
+
+	(epocaPintor [practica2_Class1])
+	(estilAutor [practica2_Class10015])
+	(nacionalitat "Holanda")
+	(nom "Vincent Van Lluis"))
+
+([practica2_Class10034] of  Autor
+
+	(epocaPintor [practica2_Class1])
+	(estilAutor [practica2_Class10016])
+	(nacionalitat "Catalunya")
+	(nom "Nil Velazquez"))
+
+([practica2_Class10035] of  Autor
+
+	(epocaPintor [practica2_Class10011])
+	(estilAutor [practica2_Class83])
+	(nacionalitat "Holanda")
+	(nom "Arnau Rembrandt"))
+
+([practica2_Class10036] of  Autor
+
+	(epocaPintor [practica2_Class1])
+	(estilAutor [practica2_Class82])
+	(nacionalitat "Italia")
+	(nom "Mono Liso"))
+
+([practica2_Class10037] of  Autor
+
+	(epocaPintor [practica2_Class10012])
+	(estilAutor [practica2_Class79])
+	(nacionalitat "Turquia")
+	(nom "Jordi Gorchs"))
+
+([practica2_Class10038] of  Autor
+
+	(epocaPintor [practica2_Class5])
+	(estilAutor [practica2_Class10019])
+	(nacionalitat "Angola")
+	(nom "Merino Xavier"))
+
+([practica2_Class10039] of  Obra
+
+	(anyCreacio 1963)
+	(autorObra [practica2_Class10031])
+	(complexitat 3)
+	(epocaObra [practica2_Class5])
+	(estilObra [practica2_Class10017])
+	(midaObra [practica2_Class10020])
+	(nomObra "Lluvias en la Calle")
+	(rellevancia 2)
+	(salaObra [practica2_Class92])
+	(tematicaObra [practica2_Class10001]))
+
+([practica2_Class10040] of  Obra
+
+	(anyCreacio 1620)
+	(autorObra [practica2_Class10030])
+	(complexitat 6)
+	(epocaObra [practica2_Class10013])
+	(estilObra [practica2_Class10018])
+	(midaObra [practica2_Class10029])
+	(nomObra "El deu dels mars i del desert")
+	(rellevancia 7)
+	(salaObra [practica2_Class10053])
+	(tematicaObra [practica2_Class10005]))
+
+([practica2_Class10041] of  Obra
+
+	(anyCreacio 1111)
+	(autorObra [practica2_Class10035])
+	(complexitat 9)
+	(epocaObra [practica2_Class10011])
+	(estilObra [practica2_Class83])
+	(midaObra [practica2_Class10025])
+	(nomObra "La dama especial")
+	(rellevancia 7)
+	(salaObra [practica2_Class10052])
+	(tematicaObra [practica2_Class96]))
+
+([practica2_Class10042] of  Obra
+
+	(anyCreacio 1489)
+	(autorObra [practica2_Class10037])
+	(complexitat 6)
+	(epocaObra [practica2_Class10012])
+	(estilObra [practica2_Class10019])
+	(midaObra [practica2_Class10024])
+	(nomObra "Los panas")
+	(rellevancia 10)
+	(salaObra [practica2_Class10054])
+	(tematicaObra [practica2_Class96]))
+
+([practica2_Class10044] of  Obra
+
+	(anyCreacio 1866)
+	(autorObra [practica2_Class10032])
+	(complexitat 1)
+	(epocaObra [practica2_Class5])
+	(estilObra [practica2_Class80])
+	(midaObra [practica2_Class10020])
+	(nomObra "Al pot petit hi ha la bona confitura")
+	(rellevancia 4)
+	(salaObra [practica2_Class92])
+	(tematicaObra [practica2_Class10002]))
+
+([practica2_Class10046] of  Obra
+
+	(anyCreacio 1990)
+	(autorObra [practica2_Class10038])
+	(complexitat 7)
+	(epocaObra [practica2_Class5])
+	(estilObra [practica2_Class10017])
+	(midaObra [practica2_Class10022])
+	(nomObra "Efectes visuals")
+	(rellevancia 6)
+	(salaObra [practica2_Class92])
+	(tematicaObra [practica2_Class10006]))
+
+([practica2_Class10047] of  Obra
+
+	(anyCreacio 1820)
+	(autorObra [practica2_Class10036])
+	(complexitat 9)
+	(epocaObra [practica2_Class1])
+	(estilObra [practica2_Class79])
+	(midaObra [practica2_Class10027])
+	(nomObra "La vida en confinament")
+	(rellevancia 7)
+	(salaObra [practica2_Class10051])
+	(tematicaObra [practica2_Class95]))
+
+([practica2_Class10048] of  Obra
+
+	(anyCreacio 2015)
+	(autorObra [practica2_Class10034])
+	(complexitat 6)
+	(epocaObra [practica2_Class1])
+	(estilObra [practica2_Class83])
+	(midaObra [practica2_Class10025])
+	(nomObra "Zeus i Odin")
+	(rellevancia 6)
+	(salaObra [practica2_Class10051])
+	(tematicaObra [practica2_Class10004]))
+
+([practica2_Class10049] of  Obra
+
+	(anyCreacio 1881)
+	(autorObra [practica2_Class10033])
+	(complexitat 4)
+	(epocaObra [practica2_Class1])
+	(estilObra [practica2_Class10019])
+	(midaObra [practica2_Class10028])
+	(nomObra "La primera musa")
+	(rellevancia 3)
+	(salaObra [practica2_Class10051])
+	(tematicaObra [practica2_Class94]))
+
+([practica2_Class10051] of  SalaCronologica
+
+	(epocaSala [practica2_Class1]))
+
+([practica2_Class10052] of  SalaCronologica
+
+	(epocaSala [practica2_Class10011]))
+
+([practica2_Class10053] of  SalaCronologica
+
+	(epocaSala [practica2_Class10013]))
+
+([practica2_Class10054] of  SalaCronologica
+
+	(epocaSala [practica2_Class10012]))
+
+([practica2_Class10055] of  Obra
+
+	(anyCreacio 2015)
+	(autorObra [practica2_Class76])
+	(complexitat 10)
+	(epocaObra [practica2_Class5])
+	(estilObra [practica2_Class10015])
+	(midaObra [practica2_Class10029])
+	(nomObra "El colom de la placa")
+	(rellevancia 8)
+	(salaObra [practica2_Class91])
+	(tematicaObra [practica2_Class10002]))
+
+([practica2_Class10056] of  Obra
+
+	(anyCreacio 2020)
+	(autorObra [practica2_Class76])
+	(complexitat 10)
+	(epocaObra [practica2_Class5])
+	(estilObra [practica2_Class79])
+	(midaObra [practica2_Class84])
+	(nomObra "La Chant de Macaco")
+	(rellevancia 10)
+	(salaObra [practica2_Class91])
+	(tematicaObra [practica2_Class10003]))
 
 ([practica2_Class5] of  Epoca
 
@@ -36,21 +376,21 @@
 
 ([practica2_Class84] of  Mida
 
-	(alcada 10.0)
-	(amplada 10.0)
-	(profunditat 2.0))
+	(alcada 300)
+	(amplada 500))
 
 ([practica2_Class90] of  Obra
 
-	(anyCreacio 2020)
+	(anyCreacio 2010)
 	(autorObra [practica2_Class76])
-	(complexitat 10)
+	(complexitat 7)
 	(epocaObra [practica2_Class5])
 	(estilObra [practica2_Class79])
-	(midaObra [practica2_Class84])
-	(nomObra "Achanta")
+	(midaObra [practica2_Class10028])
+	(nomObra "La historia de llama")
 	(rellevancia 10)
-	(salaObra [practica2_Class91]))
+	(salaObra [practica2_Class91])
+	(tematicaObra [practica2_Class97]))
 
 ([practica2_Class91] of  SalaAutor
 

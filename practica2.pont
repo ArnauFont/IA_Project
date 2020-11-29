@@ -1,4 +1,4 @@
-; Sat Nov 28 21:55:47 CET 2020
+; Sun Nov 29 20:06:31 CET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -37,6 +37,11 @@
 ;+		(allowed-classes Autor)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(single-slot tematicaObra
+		(type INSTANCE)
+;+		(allowed-classes Tematica)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot anyCreacio
 		(type INTEGER)
 ;+		(cardinality 0 1)
@@ -64,7 +69,7 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot amplada
-		(type FLOAT)
+		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot epocaObra
@@ -105,16 +110,16 @@
 		(type FLOAT)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot estil
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot nomObra
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(single-slot estil
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot alcada
-		(type FLOAT)
+		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
@@ -151,30 +156,26 @@
 (defclass Mida
 	(is-a USER)
 	(role concrete)
-	(single-slot alcada
-		(type FLOAT)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot amplada
-		(type FLOAT)
+		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot profunditat
-		(type FLOAT)
+	(single-slot alcada
+		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
 (defclass Obra
 	(is-a USER)
 	(role concrete)
-	(single-slot epocaObra
-		(type INSTANCE)
-;+		(allowed-classes Epoca)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot salaObra
 		(type INSTANCE)
 ;+		(allowed-classes Sala)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot epocaObra
+		(type INSTANCE)
+;+		(allowed-classes Epoca)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot autorObra
@@ -189,6 +190,11 @@
 		(create-accessor read-write))
 	(single-slot rellevancia
 		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tematicaObra
+		(type INSTANCE)
+;+		(allowed-classes Tematica)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot complexitat

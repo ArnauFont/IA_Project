@@ -1,4 +1,4 @@
-; Sat Nov 28 21:55:47 CET 2020
+; Sun Nov 29 20:06:31 CET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -21,21 +21,22 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[practica2_ProjectKB_Class77]
-		[practica2_ProjectKB_Class78]
-		[practica2_ProjectKB_Class79]
-		[practica2_ProjectKB_Class80]
-		[practica2_ProjectKB_Class81]
-		[practica2_ProjectKB_Class82]
-		[practica2_ProjectKB_Class83]
-		[practica2_ProjectKB_Class84]
-		[practica2_ProjectKB_Class85]
-		[practica2_ProjectKB_Class86]
-		[practica2_ProjectKB_Class87]
-		[practica2_ProjectKB_Class88]))
+		[practica2_ProjectKB_Class10192]
+		[practica2_ProjectKB_Class10193]
+		[practica2_ProjectKB_Class10194]
+		[practica2_ProjectKB_Class10195]
+		[practica2_ProjectKB_Class10196]
+		[practica2_ProjectKB_Class10197]
+		[practica2_ProjectKB_Class10198]
+		[practica2_ProjectKB_Class10199]
+		[practica2_ProjectKB_Class10200]
+		[practica2_ProjectKB_Class10201]
+		[practica2_ProjectKB_Class10202]
+		[practica2_ProjectKB_Class10203]))
 
 ([CLSES_TAB] of  Widget
 
+	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.ClsesTab"))
 
 ([CREATION_TIMESTAMP_WIDGET] of  Widget
@@ -48,6 +49,7 @@
 
 ([FORMS_TAB] of  Widget
 
+	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.FormsTab"))
 
 ([INSTANCE_ANNOTATION_FORM_WIDGET] of  Widget
@@ -72,9 +74,10 @@
 
 ([INSTANCES_TAB] of  Widget
 
+	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
 
-([KB_629756_Class2] of  Map
+([KB_590052_Class2] of  Map
 )
 
 ([KB_789627_Class0] of  String
@@ -84,8 +87,12 @@
 
 ([KB_789627_Class1] of  Map
 
-	(entries [practica2_ProjectKB_Class90])
-	(referenced_maps [practica2_ProjectKB_Class89]))
+	(entries
+		[practica2_ProjectKB_Class10204]
+		[practica2_ProjectKB_Class10205]
+		[practica2_ProjectKB_Class10207]
+		[practica2_ProjectKB_Class10208])
+	(referenced_maps [practica2_ProjectKB_Class10206]))
 
 ([KB_789627_Class100] of  String
 
@@ -191,6 +198,7 @@
 	(display_hidden_classes TRUE)
 	(display_multi_parent_class_icon TRUE)
 	(is_readonly FALSE)
+	(tabbed_instance_form_layout FALSE)
 	(undo_enabled TRUE)
 	(update_modification_slots FALSE))
 
@@ -263,6 +271,249 @@
 ([practica2_ProjectKB_Class101] of  String
 
 	(name "SearchTab_Query"))
+
+([practica2_ProjectKB_Class10152] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "amplada")
+	(property_list [practica2_ProjectKB_Class10153])
+	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
+	(width 100)
+	(x 100)
+	(y 0))
+
+([practica2_ProjectKB_Class10153] of  Property_List
+)
+
+([practica2_ProjectKB_Class10154] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "alcada")
+	(property_list [practica2_ProjectKB_Class10155])
+	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
+	(width 100)
+	(x 0)
+	(y 0))
+
+([practica2_ProjectKB_Class10155] of  Property_List
+)
+
+([practica2_ProjectKB_Class10156] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "profunditat")
+	(property_list [practica2_ProjectKB_Class10157])
+	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
+	(width 100)
+	(x 0)
+	(y 60))
+
+([practica2_ProjectKB_Class10157] of  Property_List
+)
+
+([practica2_ProjectKB_Class10158] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "alcada")
+	(property_list [practica2_ProjectKB_Class10159])
+	(widget_class_name "edu.stanford.smi.protege.widget.IntegerFieldWidget")
+	(width 100)
+	(x 0)
+	(y 0))
+
+([practica2_ProjectKB_Class10159] of  Property_List
+)
+
+([practica2_ProjectKB_Class10160] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "amplada")
+	(property_list [practica2_ProjectKB_Class10161])
+	(widget_class_name "edu.stanford.smi.protege.widget.IntegerFieldWidget")
+	(width 100)
+	(x 0)
+	(y 60))
+
+([practica2_ProjectKB_Class10161] of  Property_List
+)
+
+([practica2_ProjectKB_Class10162] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "alcada")
+	(property_list [practica2_ProjectKB_Class10163])
+	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
+	(width 100)
+	(x 0)
+	(y 0))
+
+([practica2_ProjectKB_Class10163] of  Property_List
+)
+
+([practica2_ProjectKB_Class10164] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "amplada")
+	(property_list [practica2_ProjectKB_Class10165])
+	(widget_class_name "edu.stanford.smi.protege.widget.FloatFieldWidget")
+	(width 100)
+	(x 0)
+	(y 60))
+
+([practica2_ProjectKB_Class10165] of  Property_List
+)
+
+([practica2_ProjectKB_Class10166] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "alcada")
+	(property_list [practica2_ProjectKB_Class10167])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([practica2_ProjectKB_Class10167] of  Property_List
+
+	(properties
+		[practica2_ProjectKB_Class10168]
+		[practica2_ProjectKB_Class10169]))
+
+([practica2_ProjectKB_Class10168] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([practica2_ProjectKB_Class10169] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([practica2_ProjectKB_Class10170] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "amplada")
+	(property_list [practica2_ProjectKB_Class10171])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([practica2_ProjectKB_Class10171] of  Property_List
+
+	(properties
+		[practica2_ProjectKB_Class10172]
+		[practica2_ProjectKB_Class10173]))
+
+([practica2_ProjectKB_Class10172] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([practica2_ProjectKB_Class10173] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([practica2_ProjectKB_Class10192] of  String
+
+	(name "Mida")
+	(string_value "alcada{}amplada"))
+
+([practica2_ProjectKB_Class10193] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([practica2_ProjectKB_Class10194] of  String
+
+	(name "SalaTematica")
+	(string_value "tematicaSala"))
+
+([practica2_ProjectKB_Class10195] of  String
+
+	(name "Autor")
+	(string_value "nom"))
+
+([practica2_ProjectKB_Class10196] of  String
+
+	(name "SalaAutor")
+	(string_value "autorSala"))
+
+([practica2_ProjectKB_Class10197] of  String
+
+	(name "Epoca")
+	(string_value "epoca"))
+
+([practica2_ProjectKB_Class10198] of  String
+
+	(name "SalaCronologica")
+	(string_value "epocaSala"))
+
+([practica2_ProjectKB_Class10199] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([practica2_ProjectKB_Class10200] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([practica2_ProjectKB_Class10201] of  String
+
+	(name "Estil")
+	(string_value "estil"))
+
+([practica2_ProjectKB_Class10202] of  String
+
+	(name "Tematica")
+	(string_value "tematica"))
+
+([practica2_ProjectKB_Class10203] of  String
+
+	(name "Obra")
+	(string_value "nomObra"))
+
+([practica2_ProjectKB_Class10204] of  Map_Entry
+
+	(key "add_name_on_instance_form")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([practica2_ProjectKB_Class10205] of  Map_Entry
+
+	(key "change_tracking_active")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([practica2_ProjectKB_Class10206] of  Map
+)
+
+([practica2_ProjectKB_Class10207] of  Map_Entry
+
+	(key "InstanceDisplay.yellow_stickies")
+	(key_class "java.lang.String")
+	(value "practica2_ProjectKB_Class10206")
+	(value_class "java.util.Map"))
+
+([practica2_ProjectKB_Class10208] of  Map_Entry
+
+	(key "suppress_instance_counting")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
 
 ([practica2_ProjectKB_Class11] of  Widget
 
@@ -567,7 +818,7 @@
 
 ([practica2_ProjectKB_Class71] of  Widget
 
-	(is_hidden TRUE)
+	(is_hidden FALSE)
 	(property_list [practica2_ProjectKB_Class72])
 	(widget_class_name "dfki.protege.ontoviz_tab.OntovizTab"))
 
@@ -592,70 +843,7 @@
 ([practica2_ProjectKB_Class76] of  Property_List
 )
 
-([practica2_ProjectKB_Class77] of  String
-
-	(name "Mida")
-	(string_value "alcada{}amplada{}profunditat"))
-
-([practica2_ProjectKB_Class78] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([practica2_ProjectKB_Class79] of  String
-
-	(name "SalaTematica")
-	(string_value "tematicaSala"))
-
 ([practica2_ProjectKB_Class8] of  Property_List
-)
-
-([practica2_ProjectKB_Class80] of  String
-
-	(name "SalaAutor")
-	(string_value "autorSala"))
-
-([practica2_ProjectKB_Class81] of  String
-
-	(name "Autor")
-	(string_value "nom"))
-
-([practica2_ProjectKB_Class82] of  String
-
-	(name "SalaCronologica")
-	(string_value "epocaSala"))
-
-([practica2_ProjectKB_Class83] of  String
-
-	(name "Epoca")
-	(string_value "epoca"))
-
-([practica2_ProjectKB_Class84] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([practica2_ProjectKB_Class85] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([practica2_ProjectKB_Class86] of  String
-
-	(name "Estil")
-	(string_value "estil"))
-
-([practica2_ProjectKB_Class87] of  String
-
-	(name "Tematica")
-	(string_value "tematica"))
-
-([practica2_ProjectKB_Class88] of  String
-
-	(name "Obra")
-	(string_value "nomObra"))
-
-([practica2_ProjectKB_Class89] of  Map
 )
 
 ([practica2_ProjectKB_Class9] of  Widget
@@ -664,26 +852,20 @@
 	(property_list [practica2_ProjectKB_Class10])
 	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
 
-([practica2_ProjectKB_Class90] of  Map_Entry
-
-	(key "InstanceDisplay.yellow_stickies")
-	(key_class "java.lang.String")
-	(value "practica2_ProjectKB_Class89")
-	(value_class "java.util.Map"))
-
 ([PROJECT] of  Project
 
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
-		[INSTANCE_ANNOTATION_FORM_WIDGET]
 		[STANDARD_FACET_FORM_WIDGET]
-		[STANDARD_SLOT_FORM_WIDGET]
 		[PAL_FORM_WIDGET]
-		[STANDARD_CLASS_FORM_WIDGET])
+		[STANDARD_CLASS_FORM_WIDGET]
+		[INSTANCE_ANNOTATION_FORM_WIDGET]
+		[STANDARD_SLOT_FORM_WIDGET])
 	(default_cls_metaclass ":STANDARD-CLASS")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
 	(default_slot_metaclass ":STANDARD-SLOT")
+	(journaling_enabled FALSE)
 	(next_frame_number 0)
 	(options [option_instance])
 	(property_map [KB_789627_Class1])
@@ -693,15 +875,54 @@
 		[SLOTS_TAB]
 		[FORMS_TAB]
 		[INSTANCES_TAB]
-		[QUERIES_TAB]))
+		[QUERIES_TAB]
+		[practica2_ProjectKB_Class39]
+		[practica2_ProjectKB_Class61]
+		[practica2_ProjectKB_Class25]
+		[practica2_ProjectKB_Class69]
+		[practica2_ProjectKB_Class11]
+		[practica2_ProjectKB_Class65]
+		[practica2_ProjectKB_Class19]
+		[practica2_ProjectKB_Class17]
+		[practica2_ProjectKB_Class3]
+		[practica2_ProjectKB_Class45]
+		[practica2_ProjectKB_Class67]
+		[practica2_ProjectKB_Class31]
+		[practica2_ProjectKB_Class27]
+		[practica2_ProjectKB_Class71]
+		[practica2_ProjectKB_Class23]
+		[practica2_ProjectKB_Class57]
+		[practica2_ProjectKB_Class21]
+		[practica2_ProjectKB_Class75]
+		[practica2_ProjectKB_Class9]
+		[practica2_ProjectKB_Class59]
+		[practica2_ProjectKB_Class55]
+		[practica2_ProjectKB_Class41]
+		[practica2_ProjectKB_Class47]
+		[practica2_ProjectKB_Class53]
+		[practica2_ProjectKB_Class43]
+		[practica2_ProjectKB_Class73]
+		[practica2_ProjectKB_Class51]
+		[practica2_ProjectKB_Class13]
+		[practica2_ProjectKB_Class37]
+		[practica2_ProjectKB_Class33]
+		[practica2_ProjectKB_Class35]
+		[practica2_ProjectKB_Class5]
+		[practica2_ProjectKB_Class7]
+		[practica2_ProjectKB_Class29]
+		[practica2_ProjectKB_Class49]
+		[practica2_ProjectKB_Class63]
+		[practica2_ProjectKB_Class15]))
 
 ([QUERIES_TAB] of  Widget
 
+	(is_hidden FALSE)
 	(property_list [KB_789627_Class98])
 	(widget_class_name "edu.stanford.smi.protegex.queries_tab.QueriesTab"))
 
 ([SLOTS_TAB] of  Widget
 
+	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.SlotsTab"))
 
 ([SOURCES] of  Property_List

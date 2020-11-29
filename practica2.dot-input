@@ -1,0 +1,16 @@
+digraph "practica2" {
+
+"Mida" [shape=box, label="Mida", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"SalaTematica" [shape=box, label="SalaTematica", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Sala"->"SalaTematica" [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Autor" [shape=box, label="Autor", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"SalaAutor" [shape=box, label="SalaAutor", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Sala"->"SalaAutor" [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"SalaCronologica" [shape=box, label="SalaCronologica", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Sala"->"SalaCronologica" [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Epoca" [shape=box, label="Epoca", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Estil" [shape=box, label="Estil", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Tematica" [shape=box, label="Tematica", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Obra" [shape=box, label="Obra", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Sala" [shape=box, label="Sala", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+}
