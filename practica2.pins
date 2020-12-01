@@ -1,4 +1,4 @@
-; Tue Dec 01 18:22:48 CET 2020
+; Tue Dec 01 19:01:15 CET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -289,7 +289,7 @@
 	(midaObra [practica2_Class10025])
 	(nomObra "Zeus i Odin")
 	(rellevancia 6)
-	(salaObra [practica2_Class10051])
+	(salaObra [practica2_Class92])
 	(tematicaObra [practica2_Class10004]))
 
 ([practica2_Class10049] of  Obra
@@ -346,6 +346,110 @@
 	(rellevancia 10)
 	(salaObra [practica2_Class91])
 	(tematicaObra [practica2_Class10003]))
+
+([practica2_Class20001] of  Obra
+
+	(anyCreacio 1615)
+	(autorObra [practica2_Class10030])
+	(complexitat 5)
+	(epocaObra [practica2_Class10013])
+	(estilObra [practica2_Class10018])
+	(midaObra [practica2_Class10020])
+	(nomObra "Solo carne")
+	(rellevancia 1)
+	(salaObra [practica2_Class10053])
+	(tematicaObra [practica2_Class95]))
+
+([practica2_Class20002] of  Obra
+
+	(anyCreacio 1113)
+	(autorObra [practica2_Class10035])
+	(complexitat 8)
+	(epocaObra [practica2_Class10011])
+	(estilObra [practica2_Class83])
+	(midaObra [practica2_Class10026])
+	(nomObra "Bodegon con empanada de pavo")
+	(rellevancia 6)
+	(salaObra [practica2_Class10052])
+	(tematicaObra [practica2_Class10003]))
+
+([practica2_Class20003] of  Obra
+
+	(anyCreacio 2017)
+	(autorObra [practica2_Class10034])
+	(complexitat 6)
+	(epocaObra [practica2_Class1])
+	(estilObra [practica2_Class10017])
+	(midaObra [practica2_Class10023])
+	(nomObra "La banana")
+	(rellevancia 8)
+	(salaObra [practica2_Class92])
+	(tematicaObra [practica2_Class10003]))
+
+([practica2_Class20004] of  Obra
+
+	(anyCreacio 1995)
+	(autorObra [practica2_Class10038])
+	(complexitat 6)
+	(epocaObra [practica2_Class5])
+	(estilObra [practica2_Class10017])
+	(midaObra [practica2_Class10022])
+	(nomObra "El verde caracol")
+	(rellevancia 7)
+	(salaObra [practica2_Class92])
+	(tematicaObra [practica2_Class10006]))
+
+([practica2_Class20005] of  Obra
+
+	(anyCreacio 1960)
+	(autorObra [practica2_Class10031])
+	(complexitat 3)
+	(epocaObra [practica2_Class5])
+	(estilObra [practica2_Class10017])
+	(midaObra [practica2_Class10029])
+	(nomObra "Tsunami en Madrid")
+	(rellevancia 4)
+	(salaObra [practica2_Class92])
+	(tematicaObra [practica2_Class10001]))
+
+([practica2_Class20006] of  Obra
+
+	(anyCreacio 1500)
+	(autorObra [practica2_Class10037])
+	(complexitat 8)
+	(epocaObra [practica2_Class10012])
+	(estilObra [practica2_Class82])
+	(midaObra [practica2_Class10020])
+	(nomObra "C'pillins")
+	(rellevancia 10)
+	(salaObra [practica2_Class10054])
+	(tematicaObra [practica2_Class10004]))
+
+([practica2_Class20007] of  Obra
+
+	(anyCreacio 1600)
+	(autorObra [practica2_Class10030])
+	(complexitat 5)
+	(epocaObra [practica2_Class10013])
+	(estilObra [practica2_Class10018])
+	(midaObra [practica2_Class10028])
+	(nomObra "Desert incendiat")
+	(rellevancia 3)
+	(salaObra [practica2_Class10053])
+	(tematicaObra [practica2_Class95]))
+
+([practica2_Class20008] of  Obra
+
+	(anyCreacio 1870)
+	(autorObra [practica2_Class10032])
+	(complexitat 4)
+	(epocaObra [practica2_Class5])
+	(estilObra [practica2_Class10015])
+	(midaObra [practica2_Class10020])
+	(nomObra "El carbassot fa el que pot")
+	(rellevancia 8)
+	(salaObra [practica2_Class92])
+	(tematicaObra [practica2_Class94]))
 
 ([practica2_Class5] of  Epoca
 
