@@ -11,6 +11,13 @@
 	(export ?ALL)
 )
 
+(defmodule mostrar-recomanacions
+	(import MAIN ?ALL)
+	(import get-info-grup deftemplate ?ALL)
+	(import processa-info-grup deftemplate ?ALL)
+	(export ?ALL)
+)
+
 ;;;Template
 
 ;;; Template per la info del grup
@@ -32,14 +39,18 @@
     (slot tematiques-preguntat (type INTEGER)(default -1))
 )
 
+(deftemplate MAIN::recomanacions
+	(multislot recs (type INSTANCE))
+)
+
+(deftemplate MAIN::recomanacions-ordenades
+	(multislot recs (type INSTANCE))
+)
+
 ;;; template per llista de recomanacions??
 (defclass MAIN::Recomanacio
 	(is-a USER)
 	(role concrete)
   (slot obra (type INSTANCE)	(create-accessor read-write))
   (slot puntuacio (type INTEGER) (create-accessor read-write))
-)
-
-(deftemplate MAIN::Recomanacions
-	(multislot recomanacions (type INSTANCE))
 )

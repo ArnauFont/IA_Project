@@ -1,0 +1,8 @@
+(clear)
+(load "C:/Users/arnau/OneDrive/Documents/ACHANTA/ia/LAB/PRACTICA2/PRACTICA-GIT/ProyectoIA/practica2.pont")
+(load "C:/Users/arnau/OneDrive/Documents/ACHANTA/ia/LAB/PRACTICA2/PRACTICA-GIT/ProyectoIA/funciones.clp")
+(load "C:/Users/arnau/OneDrive/Documents/ACHANTA/ia/LAB/PRACTICA2/PRACTICA-GIT/ProyectoIA/templates.clp")
+(load "C:/Users/arnau/OneDrive/Documents/ACHANTA/ia/LAB/PRACTICA2/PRACTICA-GIT/ProyectoIA/reglas.clp")
+(reset)
+(load-instances "C:/Users/arnau/OneDrive/Documents/ACHANTA/ia/LAB/PRACTICA2/PRACTICA-GIT/ProyectoIA/practica2.pins")
+(run)

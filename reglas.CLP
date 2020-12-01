@@ -3,10 +3,6 @@
 	(declare (salience 10))
 	=>
 	(printout t crlf)
-	;(printout t "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" crlf)
-	;(printout t "|     Recomanacio per a la visita al museu FIB     |" crlf)
-	;(printout t "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" crlf)
-	;(printout t crlf)
 	(printout t
 	"
 	                                                                                                %@@@&@@@&.
@@ -97,7 +93,7 @@
     (test (< ?numdiesvisita 0)
     )
 	=>
-	(bind ?numdiesvisita (pregunta-numerica "Durant quants dies visitareu el museu FIB?" 1 5))
+	(bind ?numdiesvisita (pregunta-numerica "Durant quants dies visitareu el museu FIB?" 1 4))
 	(modify ?d (numdiesvisita ?numdiesvisita))
 )
 
@@ -106,7 +102,7 @@
     (test (< ?horesvisita 0)
     )
 	=>
-	(bind ?horesvisita (pregunta-numerica "Durant quantes hores visitareu el museu FIB cada dia?" 1 8))
+	(bind ?horesvisita (pregunta-numerica "Durant quantes hores visitareu el museu FIB cada dia?" 1 5))
 	(modify ?h (horesvisita ?horesvisita))
 )
 
@@ -259,15 +255,78 @@
 )
 
 (defrule processa-info-grup::omplir-recomanacions-inicials
+	(not (recomanacions))
 	=>
+	(bind $?llista (create$ ))
 	(bind $?llista-obres (find-all-instances ((?inst Obra)) TRUE))
 	(loop-for-count (?i 1 (length$ $?llista-obres)) do
 			(bind ?obra-actual (nth$ ?i ?llista-obres))
 			(bind ?puntuacio-obra (send ?obra-actual get-rellevancia))
-			(make-instance (gensym) of Recomanacio (obra ?obra-actual)(puntuacio ?puntuacio-obra))
+			(bind $?llista (insert$ $?llista (+ (length$ $?llista) 1) (make-instance (gensym) of Recomanacio (obra ?obra-actual)(puntuacio ?puntuacio-obra))))
+
 	)
+	(assert (recomanacions (recs ?llista)))
 )
 
 (defrule processa-info-grup::incrementa-puntuacio-per-autor "Incrementa la puntuacio pels autors que estan a les preferencies del grup"
+ =>
+)
+
+(defrule processa-info-grup::canvi-a-mostrar-resultats "Canvi de context a mostrar les recomanacions"
 	=>
+	(printout t crlf)
+	(printout t "Les recomanacions ja s'han calculat!!" crlf)
+	(focus mostrar-recomanacions)
+)
+
+(defrule mostrar-recomanacions::ordenar-recomanacions "Ordena les recomanacions per a l'usuari"
+	(recomanacions (recs $?llista_recs))
+	=>
+	(bind $?llista_ord (create$ ))
+	(while (not (eq (length$ $?llista_recs) 0)) do
+		(bind ?elem_maxim (maxima-puntuacio $?llista_recs))
+		(bind $?llista_recs (delete-member$ $?llista_recs ?elem_maxim))
+		(bind $?llista_ord (insert$ $?llista_ord (+ (length$ $?llista_ord) 1) ?elem_maxim))
+	)
+	(assert (recomanacions-ordenades(recs ?llista_ord)))
+)
+
+(defrule mostrar-recomanacions::imprimeix-recomanacions-per-ordre "imprimeix les recomanacions en funcio de la puntuacio que tenen"
+	(recomanacions-ordenades (recs $?llista_recs))
+	(info-grup (horesvisita ?hores))
+	(info-grup (numdiesvisita ?dies))
+	=>
+	(printout t crlf)
+	(printout t crlf)
+	(printout t "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" crlf)
+	(printout t " Les nostres recomanacions son:" crlf)
+
+	(bind ?index 1)
+	(loop-for-count (?d 1 ?dies) do
+		(if (> ?index (length$ $?llista_recs))
+		then
+		(printout t crlf)
+		(printout t "  -- Ens sap greu. No tenim mes quadres a MUSEU FIB --")
+		(printout t crlf)
+		(break))
+		(bind ?linea1 (format nil "  Dia %d:" ?d))
+		(printout t ?linea1 crlf)
+		(loop-for-count(?h 1 ?hores) do
+			(if (> ?index (length$ $?llista_recs)) then (break))
+			(bind ?elem (nth$ ?index ?llista_recs))
+			(bind ?obra (send ?elem get-obra))
+			(bind ?nom (send ?obra get-nomObra))
+			(bind ?linea (format nil "  %d. %s" ?h ?nom))
+			(printout t ?linea crlf)
+			(bind ?index (+ ?index 1))
+		)
+
+	)
+
+	(printout t crlf)
+	(printout t " Esperem que us agradin les obres i, benviguts a MUSEU FIB." crlf)
+	(printout t "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" crlf)
+	(printout t crlf)
+	(printout t crlf)
+
 )

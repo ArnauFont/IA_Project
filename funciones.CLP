@@ -36,7 +36,7 @@
 (deffunction MAIN::pregunta-index (?pregunta $?valors-possibles)
     (printout t crlf)
     (printout t ?pregunta crlf)
-    (progn$ (?var ?valors-possibles) 
+    (progn$ (?var ?valors-possibles)
             (bind ?linea (format nil "  %d. %s" ?var-index ?var))
             (printout t ?linea crlf)
     )
@@ -48,16 +48,16 @@
 (deffunction MAIN::pregunta-multi-resposta (?pregunta $?valors-possibles)
     (printout t crlf)
     (printout t ?pregunta crlf)
-    (progn$ (?var ?valors-possibles) 
+    (progn$ (?var ?valors-possibles)
             (bind ?linea (format nil "  %d. %s" ?var-index ?var))
             (printout t ?linea crlf)
     )
     (printout t "...Introduiu els numeros en una mateixa linia, separats per espais..." crlf)
-    
+
     (bind ?resposta (readline))
     (bind $?nombres (explode$ ?resposta))
     (bind $?llista-nombres (create$))
-    
+
     (foreach ?var ?nombres
         (if (and (>= ?var 0) (<= ?var (length$ ?valors-possibles))) then
             (if (not (member$ ?var ?llista-nombres)) then
@@ -66,4 +66,18 @@
         )
     )
     ?llista-nombres
+)
+
+(deffunction MAIN::maxima-puntuacio ($?values)
+  (bind ?maxim -1)
+  (bind ?res nil)
+  (loop-for-count (?i 1 (length$ $?values)) do
+			(bind ?elem (nth$ ?i ?values))
+      (bind ?puntuacio_aux (send ?elem get-puntuacio))
+			(if (> ?puntuacio_aux ?maxim) then
+        (bind ?res ?elem)
+        (bind ?maxim ?puntuacio_aux)
+      )
+	)
+  ?res
 )

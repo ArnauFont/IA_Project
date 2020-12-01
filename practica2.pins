@@ -1,4 +1,4 @@
-; Sun Nov 29 20:06:31 CET 2020
+; Tue Dec 01 18:22:48 CET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -329,7 +329,7 @@
 	(epocaObra [practica2_Class5])
 	(estilObra [practica2_Class10015])
 	(midaObra [practica2_Class10029])
-	(nomObra "El colom de la placa")
+	(nomObra "El colom de la platz")
 	(rellevancia 8)
 	(salaObra [practica2_Class91])
 	(tematicaObra [practica2_Class10002]))
