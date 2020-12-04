@@ -167,7 +167,7 @@
         (bind $?nom-autors (insert$ $?nom-autors (+ (length$ $?nom-autors) 1) ?nom-autor))
     )
 
-    (bind ?resposta (pregunta-multi-resposta "Escull quins dels pintors us agraden mes (multi-resposta; 0 si cap): " ?nom-autors))
+    (bind ?resposta (pregunta-multi-resposta "Escull quins dels pintors us agraden mes (multi-resposta, 0 si cap): " ?nom-autors))
 
     (bind $?autors-resposta (create$ ))
     (loop-for-count(?i 1 (length$ ?resposta)) do
@@ -191,7 +191,7 @@
         (bind $?nom-epoques (insert$ $?nom-epoques (+ (length$ $?nom-epoques) 1) ?nom-epoca))
     )
 
-    (bind ?resposta (pregunta-multi-resposta "Escull quina de les epoques preferiu (multi-resposta; 0 si cap): " ?nom-epoques))
+    (bind ?resposta (pregunta-multi-resposta "Escull quina de les epoques preferiu (multi-resposta, 0 si cap): " ?nom-epoques))
 
     (bind $?epoques-resposta (create$ ))
     (loop-for-count(?i 1 (length$ ?resposta)) do
@@ -214,7 +214,7 @@
         (bind $?nom-estils (insert$ $?nom-estils (+ (length$ $?nom-estils) 1) ?nom-estil))
     )
 
-    (bind ?resposta (pregunta-multi-resposta "Escull quin dels estils preferiu (multi-resposta; 0 si cap): " ?nom-estils))
+    (bind ?resposta (pregunta-multi-resposta "Escull quin dels estils preferiu (multi-resposta, 0 si cap): " ?nom-estils))
 
     (bind $?estils-resposta (create$ ))
     (loop-for-count(?i 1 (length$ ?resposta)) do
@@ -237,7 +237,7 @@
         (bind $?nom-tematiques (insert$ $?nom-tematiques (+ (length$ $?nom-tematiques) 1) ?nom-tematica))
     )
 
-    (bind ?resposta (pregunta-multi-resposta "Escull quina de les tematiques preferiu (multi-resposta; 0 si cap): " ?nom-tematiques))
+    (bind ?resposta (pregunta-multi-resposta "Escull quina de les tematiques preferiu (multi-resposta, 0 si cap): " ?nom-tematiques))
 
     (bind $?tematiques-resposta (create$ ))
     (loop-for-count(?i 1 (length$ ?resposta)) do
@@ -263,13 +263,80 @@
 			(bind ?obra-actual (nth$ ?i ?llista-obres))
 			(bind ?puntuacio-obra (send ?obra-actual get-rellevancia))
 			(bind $?llista (insert$ $?llista (+ (length$ $?llista) 1) (make-instance (gensym) of Recomanacio (obra ?obra-actual)(puntuacio ?puntuacio-obra))))
-
 	)
 	(assert (recomanacions (recs ?llista)))
 )
 
 (defrule processa-info-grup::incrementa-puntuacio-per-autor "Incrementa la puntuacio pels autors que estan a les preferencies del grup"
- =>
+	(recomanacions (recs $?recomanacions))
+	(preferencies-grup (autors $?llista_autors))
+	=>
+	(progn$ (?autor_iesim ?llista_autors)
+			(progn$ (?rec_iesima ?recomanacions)
+					(bind ?nom_pref (send ?autor_iesim get-nom))
+					(bind ?obra_rec (send ?rec_iesima get-obra))
+					(bind ?autor_rec (send ?obra_rec get-autorObra))
+					(bind ?nom_rec (send ?autor_rec get-nom))
+					(if (eq (str-compare ?nom_rec ?nom_pref) 0) then
+						(bind ?punt (send ?rec_iesima get-puntuacio))
+						(modify-instance ?rec_iesima (puntuacio (+ ?punt 5)))
+					)
+			)
+	)
+)
+
+(defrule processa-info-grup::incrementa-puntuacio-per-epoques "Incrementa la puntuacio per les epoques que estan a les preferencies del grup"
+	(recomanacions (recs $?recomanacions))
+	(preferencies-grup (epoques $?llista_epoques))
+	=>
+	(progn$ (?epoca_iesim ?llista_epoques)
+			(progn$ (?rec_iesima ?recomanacions)
+					(bind ?nom_pref (send ?epoca_iesim get-epoca))
+					(bind ?obra_rec (send ?rec_iesima get-obra))
+					(bind ?epoca_rec (send ?obra_rec get-epocaObra))
+					(bind ?nom_rec (send ?epoca_rec get-epoca))
+					(if (eq (str-compare ?nom_rec ?nom_pref) 0) then
+						(bind ?punt (send ?rec_iesima get-puntuacio))
+						(modify-instance ?rec_iesima (puntuacio (+ ?punt 5)))
+					)
+			)
+	)
+)
+
+(defrule processa-info-grup::incrementa-puntuacio-per-estils "Incrementa la puntuacio pels estils que estan a les preferencies del grup"
+	(recomanacions (recs $?recomanacions))
+	(preferencies-grup (estils $?llista_estils))
+	=>
+	(progn$ (?estil_iesim ?llista_estils)
+			(progn$ (?rec_iesima ?recomanacions)
+					(bind ?nom_pref (send ?estil_iesim get-estil))
+					(bind ?obra_rec (send ?rec_iesima get-obra))
+					(bind ?estil_rec (send ?obra_rec get-estilObra))
+					(bind ?nom_rec (send ?estil_rec get-estil))
+					(if (eq (str-compare ?nom_rec ?nom_pref) 0) then
+						(bind ?punt (send ?rec_iesima get-puntuacio))
+						(modify-instance ?rec_iesima (puntuacio (+ ?punt 5)))
+					)
+			)
+	)
+)
+
+(defrule processa-info-grup::incrementa-puntuacio-per-tematiques "Incrementa la puntuacio per les tematiques que estan a les preferencies del grup"
+	(recomanacions (recs $?recomanacions))
+	(preferencies-grup (tematiques $?llista_tem))
+	=>
+	(progn$ (?tem_iesim ?llista_tem)
+			(progn$ (?rec_iesima ?recomanacions)
+					(bind ?nom_pref (send ?tem_iesim get-tematica))
+					(bind ?obra_rec (send ?rec_iesima get-obra))
+					(bind ?tem_rec (send ?obra_rec get-tematicaObra))
+					(bind ?nom_rec (send ?tem_rec get-tematica))
+					(if (eq (str-compare ?nom_rec ?nom_pref) 0) then
+						(bind ?punt (send ?rec_iesima get-puntuacio))
+						(modify-instance ?rec_iesima (puntuacio (+ ?punt 5)))
+					)
+			)
+	)
 )
 
 (defrule processa-info-grup::canvi-a-mostrar-resultats "Canvi de context a mostrar les recomanacions"

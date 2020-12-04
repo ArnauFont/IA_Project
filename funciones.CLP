@@ -59,7 +59,7 @@
     (bind $?llista-nombres (create$))
 
     (foreach ?var ?nombres
-        (if (and (>= ?var 0) (<= ?var (length$ ?valors-possibles))) then
+        (if (and (> ?var 0) (<= ?var (length$ ?valors-possibles))) then
             (if (not (member$ ?var ?llista-nombres)) then
                 (bind ?llista-nombres (create$ ?llista-nombres ?var))
             )
