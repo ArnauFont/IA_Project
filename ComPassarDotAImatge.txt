@@ -1,0 +1,3 @@
+dot -o classes.jpg -Tjpg practica2.dot-input
+
+cd ../../mnt/c/Users/arnau/OneDrive/Documents/ACHANTA/ia/LAB/PRACTICA2/PRACTICA-GIT/ProyectoIA/
