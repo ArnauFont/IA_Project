@@ -1,4 +1,4 @@
-; Fri Dec 04 19:19:19 CET 2020
+; Mon Dec 07 19:15:34 CET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -33,14 +33,17 @@
 
 ([practica2_Class10007] of  SalaTematica
 
+	(nomSala "Sala Amor")
 	(tematicaSala [practica2_Class94]))
 
 ([practica2_Class10008] of  SalaTematica
 
+	(nomSala "Sala Naturalesa")
 	(tematicaSala [practica2_Class10006]))
 
 ([practica2_Class10009] of  SalaTematica
 
+	(nomSala "Sala Religio")
 	(tematicaSala [practica2_Class10005]))
 
 ([practica2_Class10011] of  Epoca
@@ -307,19 +310,23 @@
 
 ([practica2_Class10051] of  SalaCronologica
 
-	(epocaSala [practica2_Class1]))
+	(epocaSala [practica2_Class1])
+	(nomSala "Sala Moderna"))
 
 ([practica2_Class10052] of  SalaCronologica
 
-	(epocaSala [practica2_Class10011]))
+	(epocaSala [practica2_Class10011])
+	(nomSala "Sala Baixa Edat Mitjana"))
 
 ([practica2_Class10053] of  SalaCronologica
 
-	(epocaSala [practica2_Class10013]))
+	(epocaSala [practica2_Class10013])
+	(nomSala "Sala Art Antic"))
 
 ([practica2_Class10054] of  SalaCronologica
 
-	(epocaSala [practica2_Class10012]))
+	(epocaSala [practica2_Class10012])
+	(nomSala "Sala Alta Edat Mitjana"))
 
 ([practica2_Class10055] of  Obra
 
@@ -498,14 +505,17 @@
 
 ([practica2_Class91] of  SalaAutor
 
-	(autorSala [practica2_Class76]))
+	(autorSala [practica2_Class76])
+	(nomSala "Sala Luisillo de Macaco"))
 
 ([practica2_Class92] of  SalaCronologica
 
-	(epocaSala [practica2_Class5]))
+	(epocaSala [practica2_Class5])
+	(nomSala "Sala Contemporanea"))
 
 ([practica2_Class93] of  SalaTematica
 
+	(nomSala "Sala Paisatge")
 	(tematicaSala [practica2_Class97]))
 
 ([practica2_Class94] of  Tematica

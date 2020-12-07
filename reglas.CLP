@@ -262,7 +262,7 @@
 	(loop-for-count (?i 1 (length$ $?llista-obres)) do
 			(bind ?obra-actual (nth$ ?i ?llista-obres))
 			(bind ?puntuacio-obra (send ?obra-actual get-rellevancia))
-			(bind $?llista (insert$ $?llista (+ (length$ $?llista) 1) (make-instance (gensym) of Recomanacio (obra ?obra-actual)(puntuacio ?puntuacio-obra))))
+			(bind $?llista (insert$ $?llista (+ (length$ $?llista) 1) (make-instance (gensym) of Recomanacio (obra ?obra-actual)(puntuacio ?puntuacio-obra)(temps 5))))
 	)
 	(assert (recomanacions (recs ?llista)))
 )
@@ -280,6 +280,8 @@
 					(if (eq (str-compare ?nom_rec ?nom_pref) 0) then
 						(bind ?punt (send ?rec_iesima get-puntuacio))
 						(modify-instance ?rec_iesima (puntuacio (+ ?punt 5)))
+						(bind ?temps (send ?rec_iesima get-temps))
+						(modify-instance ?rec_iesima (temps (+ ?temps 5)))
 					)
 			)
 	)
@@ -298,6 +300,8 @@
 					(if (eq (str-compare ?nom_rec ?nom_pref) 0) then
 						(bind ?punt (send ?rec_iesima get-puntuacio))
 						(modify-instance ?rec_iesima (puntuacio (+ ?punt 5)))
+						(bind ?temps (send ?rec_iesima get-temps))
+						(modify-instance ?rec_iesima (temps (+ ?temps 5)))
 					)
 			)
 	)
@@ -316,6 +320,8 @@
 					(if (eq (str-compare ?nom_rec ?nom_pref) 0) then
 						(bind ?punt (send ?rec_iesima get-puntuacio))
 						(modify-instance ?rec_iesima (puntuacio (+ ?punt 5)))
+						(bind ?temps (send ?rec_iesima get-temps))
+						(modify-instance ?rec_iesima (temps (+ ?temps 5)))
 					)
 			)
 	)
@@ -334,8 +340,42 @@
 					(if (eq (str-compare ?nom_rec ?nom_pref) 0) then
 						(bind ?punt (send ?rec_iesima get-puntuacio))
 						(modify-instance ?rec_iesima (puntuacio (+ ?punt 5)))
+						(bind ?temps (send ?rec_iesima get-temps))
+						(modify-instance ?rec_iesima (temps (+ ?temps 5)))
 					)
 			)
+	)
+)
+
+(defrule processa-info-grup::modifica-temps-per-coneixement "Modifica el temps que estara observant una obra en funcio del coneixement del grup"
+	(recomanacions (recs $?recomanacions))
+	(info-grup (coneixementart ?coneixement))
+	=>
+	(progn$ (?rec_iesima ?recomanacions)
+		(bind ?temps (send ?rec_iesima get-temps))
+		(bind ?mult (max 1 (/ ?coneixement 5)))
+		(modify-instance ?rec_iesima (temps (* ?temps ?mult)))
+	)
+)
+
+(defrule processa-info-grup::modifica-temps-per-tipusvisitant "Modifica el temps que estara observant una obra en funcio del tipus de visitant que es"
+	(recomanacions (recs $?recomanacions))
+	(info-grup (tipusvisitant ?tipus))
+	=>
+	(progn$ (?rec_iesima ?recomanacions)
+		(bind ?temps (send ?rec_iesima get-temps))
+		(if (eq (str-compare ?tipus "Parella") 0) then
+			(modify-instance ?rec_iesima (temps (* ?temps 1.10)))
+		)
+		(if (eq (str-compare ?tipus "Grup petit (3-20)") 0) then
+			(modify-instance ?rec_iesima (temps (* ?temps 1.15)))
+		)
+		(if (eq (str-compare ?tipus "Grup mitja (21-35)") 0) then
+			(modify-instance ?rec_iesima (temps (* ?temps 1.20)))
+		)
+		(if (eq (str-compare ?tipus "Grup gran (+35)") 0) then
+			(modify-instance ?rec_iesima (temps (* ?temps 1.25)))
+		)
 	)
 )
 
@@ -358,41 +398,100 @@
 	(assert (recomanacions-ordenades(recs ?llista_ord)))
 )
 
-(defrule mostrar-recomanacions::imprimeix-recomanacions-per-ordre "imprimeix les recomanacions en funcio de la puntuacio que tenen"
+(defrule mostrar-recomanacions::ordenar-recomanacions-per-sala "Ordena les recomanacions per a l'usuari tenint en compte les sales"
 	(recomanacions-ordenades (recs $?llista_recs))
+	=>
+	(bind $?llista_ord (create$ ))
+	(bind ?elem (nth$ 1 ?llista_recs))
+	(while (not (eq (length$ $?llista_recs) 0)) do
+		(bind ?elem_millor (millor-quadre ?elem $?llista_recs))
+		(bind ?elem ?elem_millor)
+		(bind $?llista_recs (delete-member$ $?llista_recs ?elem_millor))
+		(bind $?llista_ord (insert$ $?llista_ord (+ (length$ $?llista_ord) 1) ?elem_millor))
+	)
+	(assert (recomanacions-ordenades-sala (recs ?llista_ord)))
+)
+
+(defrule mostrar-recomanacions::imprimeix-recomanacions-per-ordre "imprimeix les recomanacions en funcio de la puntuacio que tenen"
+	(recomanacions-ordenades-sala (recs $?llista_recs))
 	(info-grup (horesvisita ?hores))
 	(info-grup (numdiesvisita ?dies))
 	=>
 	(printout t crlf)
 	(printout t crlf)
-	(printout t "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" crlf)
+	(printout t "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" crlf)
 	(printout t " Les nostres recomanacions son:" crlf)
 
 	(bind ?index 1)
+	(bind ?minutsDia (* ?hores 60))
+	(bind ?impresMissatgeLimit 0)
 	(loop-for-count (?d 1 ?dies) do
-		(if (> ?index (length$ $?llista_recs))
-		then
+		(if (> ?index (length$ $?llista_recs)) then
+			(if (eq ?impresMissatgeLimit 0) then
+				(printout t crlf)
+				(printout t "  -- Ens sap greu. No tenim mes quadres a MUSEU FIB --")
+				(printout t crlf)
+				(bind ?impresMissatgeLimit 1)
+			)
+			(break)
+		)
 		(printout t crlf)
-		(printout t "  -- Ens sap greu. No tenim mes quadres a MUSEU FIB --")
-		(printout t crlf)
-		(break))
 		(bind ?linea1 (format nil "  Dia %d:" ?d))
 		(printout t ?linea1 crlf)
-		(loop-for-count(?h 1 ?hores) do
-			(if (> ?index (length$ $?llista_recs)) then (break))
+		(bind ?minutsAcutal 0)
+		(bind ?h 0)
+		(while (< ?minutsAcutal ?minutsDia) do
+			(if (> ?index (length$ $?llista_recs)) then
+				(if (eq ?impresMissatgeLimit 0) then
+					(printout t crlf)
+					(printout t "  -- Ens sap greu. No tenim mes quadres a MUSEU FIB --")
+					(printout t crlf)
+					(bind ?impresMissatgeLimit 1)
+				)
+				(break)
+			)
+
 			(bind ?elem (nth$ ?index ?llista_recs))
+
+			(bind ?temps (send ?elem get-temps))
+
+			(if (> (+ ?minutsAcutal ?temps) ?minutsDia) then (break))
+
 			(bind ?obra (send ?elem get-obra))
 			(bind ?nom (send ?obra get-nomObra))
-			(bind ?linea (format nil "  %d. %s" ?h ?nom))
-			(printout t ?linea crlf)
-			(bind ?index (+ ?index 1))
-		)
 
+			(bind ?epoca (send ?obra get-epocaObra))
+			(bind ?nomEpoca (send ?epoca get-epoca))
+
+			(bind ?autor (send ?obra get-autorObra))
+			(bind ?nomAutor (send ?autor get-nom))
+
+			(bind ?estil (send ?obra get-estilObra))
+			(bind ?nomEstil (send ?estil get-estil))
+
+			(bind ?tem (send ?obra get-tematicaObra))
+			(bind ?nomTematica (send ?tem get-tematica))
+
+			(bind ?rell (send ?obra get-rellevancia))
+
+			(bind ?nomSala (send (send ?obra get-salaObra) get-nomSala))
+
+			(bind ?linea (format nil "  %d. %s --> %d minuts" ?h ?nom ?temps))
+			(printout t ?linea crlf)
+			(bind ?linea (format nil "     Informacio de la obra:"))
+			(printout t ?linea crlf)
+			(bind ?linea (format nil "     - Autor: %s, Epoca: %s, Estil: %s, Tematica: %s, Sala: %s, Rellevancia: %d" ?nomAutor ?nomEpoca ?nomEstil ?nomTematica ?nomSala ?rell))
+			(printout t ?linea crlf)
+
+			(bind ?index (+ ?index 1))
+			(bind ?h (+ ?h 1))
+			(bind ?minutsAcutal (+ ?minutsAcutal ?temps))
+		)
 	)
 
 	(printout t crlf)
 	(printout t " Esperem que us agradin les obres i, benviguts a MUSEU FIB." crlf)
-	(printout t "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" crlf)
+	(printout t "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" crlf)
 	(printout t crlf)
 	(printout t crlf)
 

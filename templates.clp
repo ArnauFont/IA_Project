@@ -23,6 +23,7 @@
 ;;; Template per la info del grup
 (deftemplate MAIN::info-grup
 	(slot tipusvisitant (type STRING))
+	;;;Pot ser: Individual, Parella, Grup petit (3-20), Grup mitja (21-35) o Grup gran (+35).
 	(slot numdiesvisita (type INTEGER)(default -1))
 	(slot horesvisita (type INTEGER)(default -1))
 	(slot coneixementart (type INTEGER)(default -1))
@@ -47,10 +48,15 @@
 	(multislot recs (type INSTANCE))
 )
 
+(deftemplate MAIN::recomanacions-ordenades-sala
+	(multislot recs (type INSTANCE))
+)
+
 ;;; template per llista de recomanacions??
 (defclass MAIN::Recomanacio
 	(is-a USER)
 	(role concrete)
   (slot obra (type INSTANCE)	(create-accessor read-write))
   (slot puntuacio (type INTEGER) (create-accessor read-write))
+	(slot temps (type INTEGER))
 )

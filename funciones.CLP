@@ -81,3 +81,22 @@
 	)
   ?res
 )
+
+(deffunction MAIN::millor-quadre (?recomanacio $?values)
+  (bind ?obra (send ?recomanacio get-obra))
+  (bind ?sala (send ?obra get-salaObra))
+  (bind ?nomSala (send ?sala get-nomSala))
+  (bind ?res nil)
+  (bind ?indexMax 5)
+  (loop-for-count (?i 1 (length$ $?values)) do
+			(bind ?elem (nth$ ?i ?values))
+      (if (eq ?i 1) then (bind ?res ?elem))
+      (bind ?nomSalaAux (send (send (send ?elem get-obra) get-salaObra) get-nomSala))
+      (if (eq (str-compare ?nomSala ?nomSalaAux) 0) then
+  			(bind ?res ?elem)
+        (break)
+  		)
+      (if (eq ?i ?indexMax) then (break))
+	)
+  ?res
+)

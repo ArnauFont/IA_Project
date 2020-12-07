@@ -1,4 +1,4 @@
-; Fri Dec 04 19:19:19 CET 2020
+; Mon Dec 07 19:15:34 CET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -21,18 +21,18 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[practica2_ProjectKB_Class10040]
-		[practica2_ProjectKB_Class10041]
-		[practica2_ProjectKB_Class10042]
-		[practica2_ProjectKB_Class10043]
-		[practica2_ProjectKB_Class10044]
-		[practica2_ProjectKB_Class10045]
-		[practica2_ProjectKB_Class10046]
-		[practica2_ProjectKB_Class10047]
-		[practica2_ProjectKB_Class10048]
-		[practica2_ProjectKB_Class10049]
-		[practica2_ProjectKB_Class10050]
-		[practica2_ProjectKB_Class10051]))
+		[practica2_ProjectKB_Class20124]
+		[practica2_ProjectKB_Class20125]
+		[practica2_ProjectKB_Class20126]
+		[practica2_ProjectKB_Class20127]
+		[practica2_ProjectKB_Class20128]
+		[practica2_ProjectKB_Class20129]
+		[practica2_ProjectKB_Class20130]
+		[practica2_ProjectKB_Class20131]
+		[practica2_ProjectKB_Class20132]
+		[practica2_ProjectKB_Class20133]
+		[practica2_ProjectKB_Class20134]
+		[practica2_ProjectKB_Class20135]))
 
 ([CLSES_TAB] of  Widget
 
@@ -77,7 +77,7 @@
 	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
 
-([KB_466977_Class5] of  Map
+([KB_429173_Class5] of  Map
 )
 
 ([KB_789627_Class0] of  String
@@ -88,11 +88,11 @@
 ([KB_789627_Class1] of  Map
 
 	(entries
-		[practica2_ProjectKB_Class10052]
-		[practica2_ProjectKB_Class10053]
-		[practica2_ProjectKB_Class10055]
-		[practica2_ProjectKB_Class10056])
-	(referenced_maps [practica2_ProjectKB_Class10054]))
+		[practica2_ProjectKB_Class20136]
+		[practica2_ProjectKB_Class20137]
+		[practica2_ProjectKB_Class20139]
+		[practica2_ProjectKB_Class20140])
+	(referenced_maps [practica2_ProjectKB_Class20138]))
 
 ([KB_789627_Class100] of  String
 
@@ -268,97 +268,6 @@
 ([practica2_ProjectKB_Class10] of  Property_List
 )
 
-([practica2_ProjectKB_Class10040] of  String
-
-	(name "Mida")
-	(string_value "alcada{}amplada"))
-
-([practica2_ProjectKB_Class10041] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([practica2_ProjectKB_Class10042] of  String
-
-	(name "SalaTematica")
-	(string_value "tematicaSala"))
-
-([practica2_ProjectKB_Class10043] of  String
-
-	(name "Autor")
-	(string_value "nom"))
-
-([practica2_ProjectKB_Class10044] of  String
-
-	(name "SalaAutor")
-	(string_value "autorSala"))
-
-([practica2_ProjectKB_Class10045] of  String
-
-	(name "Epoca")
-	(string_value "epoca"))
-
-([practica2_ProjectKB_Class10046] of  String
-
-	(name "SalaCronologica")
-	(string_value "epocaSala"))
-
-([practica2_ProjectKB_Class10047] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([practica2_ProjectKB_Class10048] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([practica2_ProjectKB_Class10049] of  String
-
-	(name "Estil")
-	(string_value "estil"))
-
-([practica2_ProjectKB_Class10050] of  String
-
-	(name "Tematica")
-	(string_value "tematica"))
-
-([practica2_ProjectKB_Class10051] of  String
-
-	(name "Obra")
-	(string_value "nomObra"))
-
-([practica2_ProjectKB_Class10052] of  Map_Entry
-
-	(key "add_name_on_instance_form")
-	(key_class "java.lang.String")
-	(value "false")
-	(value_class "java.lang.String"))
-
-([practica2_ProjectKB_Class10053] of  Map_Entry
-
-	(key "change_tracking_active")
-	(key_class "java.lang.String")
-	(value "false")
-	(value_class "java.lang.String"))
-
-([practica2_ProjectKB_Class10054] of  Map
-)
-
-([practica2_ProjectKB_Class10055] of  Map_Entry
-
-	(key "InstanceDisplay.yellow_stickies")
-	(key_class "java.lang.String")
-	(value "practica2_ProjectKB_Class10054")
-	(value_class "java.util.Map"))
-
-([practica2_ProjectKB_Class10056] of  Map_Entry
-
-	(key "suppress_instance_counting")
-	(key_class "java.lang.String")
-	(value "false")
-	(value_class "java.lang.String"))
-
 ([practica2_ProjectKB_Class101] of  String
 
 	(name "SearchTab_Query"))
@@ -414,6 +323,97 @@
 
 ([practica2_ProjectKB_Class20] of  Property_List
 )
+
+([practica2_ProjectKB_Class20124] of  String
+
+	(name "Mida")
+	(string_value "alcada{}amplada"))
+
+([practica2_ProjectKB_Class20125] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([practica2_ProjectKB_Class20126] of  String
+
+	(name "SalaTematica")
+	(string_value "nomSala"))
+
+([practica2_ProjectKB_Class20127] of  String
+
+	(name "SalaAutor")
+	(string_value "nomSala"))
+
+([practica2_ProjectKB_Class20128] of  String
+
+	(name "Autor")
+	(string_value "nom"))
+
+([practica2_ProjectKB_Class20129] of  String
+
+	(name "SalaCronologica")
+	(string_value "nomSala"))
+
+([practica2_ProjectKB_Class20130] of  String
+
+	(name "Epoca")
+	(string_value "epoca"))
+
+([practica2_ProjectKB_Class20131] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([practica2_ProjectKB_Class20132] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([practica2_ProjectKB_Class20133] of  String
+
+	(name "Estil")
+	(string_value "estil"))
+
+([practica2_ProjectKB_Class20134] of  String
+
+	(name "Tematica")
+	(string_value "tematica"))
+
+([practica2_ProjectKB_Class20135] of  String
+
+	(name "Obra")
+	(string_value "nomObra"))
+
+([practica2_ProjectKB_Class20136] of  Map_Entry
+
+	(key "add_name_on_instance_form")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([practica2_ProjectKB_Class20137] of  Map_Entry
+
+	(key "change_tracking_active")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([practica2_ProjectKB_Class20138] of  Map
+)
+
+([practica2_ProjectKB_Class20139] of  Map_Entry
+
+	(key "InstanceDisplay.yellow_stickies")
+	(key_class "java.lang.String")
+	(value "practica2_ProjectKB_Class20138")
+	(value_class "java.util.Map"))
+
+([practica2_ProjectKB_Class20140] of  Map_Entry
+
+	(key "suppress_instance_counting")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
 
 ([practica2_ProjectKB_Class21] of  Widget
 
@@ -705,8 +705,8 @@
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
-		[STANDARD_FACET_FORM_WIDGET]
 		[STANDARD_SLOT_FORM_WIDGET]
+		[STANDARD_FACET_FORM_WIDGET]
 		[PAL_FORM_WIDGET]
 		[STANDARD_CLASS_FORM_WIDGET])
 	(default_cls_metaclass ":STANDARD-CLASS")

@@ -1,0 +1,6 @@
+El nostre prototip incial es capaç de preguntar i emmagatzemar totes les dades sobre el grup que necessitarem per al projecte final.
+Aquestes son, el numero de visitants que visitaran el museu (per a definir quin tipus de grup seran), el numero de dies que estaran al museu i les hores de la visita.
+Tambe realitzem un test de 10 preguntes per a evaluar el coneixement del grup, per després tenir-ho en compte en el repartiment de temps en els quadres (no en el prototip)
+A continuacio, pregunta, per a tots els pintors, epoques, estils, i tematiques de les que disposa el museu per a, en un futur, tambe tenir-ho en compte en el repartiment de temps (no en prototip)
+
+El prototip recomana, per ordre de rellevancia decreixent, un numero de quadres per dia. Estableix un temps de 1h per cada quadre.

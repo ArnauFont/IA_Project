@@ -1,4 +1,4 @@
-; Fri Dec 04 19:19:19 CET 2020
+; Mon Dec 07 19:15:34 CET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -72,6 +72,10 @@
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(single-slot nomSala
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot epocaObra
 		(type INSTANCE)
 ;+		(allowed-classes Epoca)
@@ -110,11 +114,11 @@
 		(type FLOAT)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot estil
+	(single-slot nomObra
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot nomObra
+	(single-slot estil
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -156,11 +160,11 @@
 (defclass Mida
 	(is-a USER)
 	(role concrete)
-	(single-slot alcada
+	(single-slot amplada
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot amplada
+	(single-slot alcada
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
@@ -168,14 +172,14 @@
 (defclass Obra
 	(is-a USER)
 	(role concrete)
-	(single-slot epocaObra
-		(type INSTANCE)
-;+		(allowed-classes Epoca)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot salaObra
 		(type INSTANCE)
 ;+		(allowed-classes Sala)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot epocaObra
+		(type INSTANCE)
+;+		(allowed-classes Epoca)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot autorObra
@@ -217,7 +221,11 @@
 
 (defclass Sala
 	(is-a USER)
-	(role abstract))
+	(role abstract)
+	(single-slot nomSala
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
 
 (defclass SalaAutor
 	(is-a Sala)
