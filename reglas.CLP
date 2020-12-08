@@ -459,8 +459,15 @@
 	(printout t crlf)
 	(printout t "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" crlf)
 	(printout t " Les nostres recomanacions son:" crlf)
-
+	(bind ?maxQuadres 20)
+	(bind ?quadresRecomanats 0)
 	(loop-for-count (?d 1 (length$ $?llista_recs)) do
+		(if (eq ?quadresRecomanats ?maxQuadres) then
+			(printout t crlf)
+			(printout t "  ~~  Ens sap greu, al MUSEU FIB no ens queden mes quadres per recomanar.  ~~" crlf)
+			(printout t "  ~~      Si voleu, podeu anar a la tenda del MUSEU FIB, o al bar FIB      ~~" crlf)
+			(break)
+		)
 		(printout t crlf)
 		(bind ?linea1 (format nil "  Dia %d:" ?d))
 		(printout t ?linea1 crlf)
@@ -496,6 +503,8 @@
 			(printout t ?linea crlf)
 			(bind ?linea (format nil "     - Autor: %s, Epoca: %s, Estil: %s, Tematica: %s, Sala: %s, Rellevancia: %d" ?nomAutor ?nomEpoca ?nomEstil ?nomTematica ?nomSala ?rell))
 			(printout t ?linea crlf)
+
+			(bind ?quadresRecomanats (+ ?quadresRecomanats 1))
 		)
 	)
 	(printout t crlf)
