@@ -1,0 +1,1071 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns="http://www.owl-ontologies.com/Ontology1607365008.owl#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.owl-ontologies.com/Ontology1607365008.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="SalaCronologica">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SalaCronologica</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Sala"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Estil">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Estil</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Sala">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sala</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Mida">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mida</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Tematica">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tematica</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SalaAutor">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SalaAutor</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Sala"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SalaTematica">
+    <rdfs:subClassOf rdf:resource="#Sala"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SalaTematica</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Epoca">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Epoca</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Autor">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Autor</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hola aixo es una clase per un autor</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Obra">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Obra</rdfs:label>
+  </owl:Class>
+  <owl:FunctionalProperty rdf:ID="estilAutor">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >estilAutor</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Autor"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Estil"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="epoca">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Epoca"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >epoca</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="tematica">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Tematica"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tematica</rdfs:label>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="estilObra">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Estil"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >estilObra</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Obra"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="practica2_Class3">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >practica2_Class3</rdfs:label>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="epocaPintor">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Autor"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >epocaPintor</rdfs:label>
+    <rdfs:range rdf:resource="#Epoca"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="midaObra">
+    <rdfs:range rdf:resource="#Mida"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Obra"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >midaObra</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="KB_120706_Class51">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >KB_120706_Class51</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="KB_120706_Class53">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >KB_120706_Class53</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="complexitat">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Obra"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >complexitat</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="salaObra">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Obra"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Sala"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >salaObra</rdfs:label>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="tematicaSala">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Tematica"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tematicaSala</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#SalaTematica"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="rellevancia">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Obra"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rellevancia</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="estil">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Estil"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >estil</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="autorObra">
+    <rdfs:range rdf:resource="#Autor"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Obra"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >autorObra</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="profunditat">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >profunditat</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="autorSala">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >autorSala</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#SalaAutor"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Autor"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="nacionalitat">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nacionalitat</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Autor"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="anyCreacio">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Obra"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >anyCreacio</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="amplada">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Mida"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >amplada</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="nom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nom</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Autor"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="tematicaObra">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tematicaObra</rdfs:label>
+    <rdfs:range rdf:resource="#Tematica"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Obra"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="epocaSala">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#SalaCronologica"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#Epoca"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >epocaSala</rdfs:label>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="epocaObra">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Obra"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >epocaObra</rdfs:label>
+    <rdfs:range rdf:resource="#Epoca"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="alcada">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >alcada</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Mida"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="nomSala">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nomSala</rdfs:label>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Sala"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="nomObra">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Obra"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nomObra</rdfs:label>
+  </owl:FunctionalProperty>
+  <Obra rdf:about="practica2_Class20008">
+    <epocaObra>
+      <Epoca rdf:about="practica2_Class5">
+        <epoca rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Contemporanea</epoca>
+      </Epoca>
+    </epocaObra>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1870</anyCreacio>
+    <salaObra>
+      <SalaCronologica rdf:about="practica2_Class92">
+        <nomSala rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Sala Contemporanea</nomSala>
+        <epocaSala rdf:resource="practica2_Class5"/>
+      </SalaCronologica>
+    </salaObra>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >8</rellevancia>
+    <estilObra>
+      <Estil rdf:about="practica2_Class10015">
+        <estil rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Expressionisme</estil>
+      </Estil>
+    </estilObra>
+    <tematicaObra>
+      <Tematica rdf:about="practica2_Class94">
+        <tematica rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Amor</tematica>
+      </Tematica>
+    </tematicaObra>
+    <autorObra>
+      <Autor rdf:about="practica2_Class10032">
+        <nacionalitat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Regne Unit</nacionalitat>
+        <estilAutor>
+          <Estil rdf:about="practica2_Class10018">
+            <estil rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Rococo</estil>
+          </Estil>
+        </estilAutor>
+        <nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Marcos Van Gal</nom>
+        <epocaPintor rdf:resource="practica2_Class5"/>
+      </Autor>
+    </autorObra>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >El carbassot fa el que pot</nomObra>
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >4</complexitat>
+    <midaObra>
+      <Mida rdf:about="practica2_Class10020">
+        <amplada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >15</amplada>
+        <alcada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >15</alcada>
+      </Mida>
+    </midaObra>
+  </Obra>
+  <Obra rdf:about="practica2_Class10049">
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >4</complexitat>
+    <estilObra>
+      <Estil rdf:about="practica2_Class10019">
+        <estil rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Preromanic</estil>
+      </Estil>
+    </estilObra>
+    <epocaObra>
+      <Epoca rdf:about="practica2_Class1">
+        <epoca rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Moderna</epoca>
+      </Epoca>
+    </epocaObra>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >La primera musa</nomObra>
+    <tematicaObra rdf:resource="practica2_Class94"/>
+    <midaObra>
+      <Mida rdf:about="practica2_Class10028">
+        <amplada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >200</amplada>
+        <alcada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >200</alcada>
+      </Mida>
+    </midaObra>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1881</anyCreacio>
+    <autorObra>
+      <Autor rdf:about="practica2_Class10033">
+        <nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Vincent Van Lluis</nom>
+        <estilAutor rdf:resource="practica2_Class10015"/>
+        <epocaPintor rdf:resource="practica2_Class1"/>
+        <nacionalitat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Holanda</nacionalitat>
+      </Autor>
+    </autorObra>
+    <salaObra>
+      <SalaCronologica rdf:about="practica2_Class10051">
+        <epocaSala rdf:resource="practica2_Class1"/>
+        <nomSala rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Sala Moderna</nomSala>
+      </SalaCronologica>
+    </salaObra>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3</rellevancia>
+  </Obra>
+  <Obra rdf:about="practica2_Class10040">
+    <epocaObra>
+      <Epoca rdf:about="practica2_Class10013">
+        <epoca rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Art Antic</epoca>
+      </Epoca>
+    </epocaObra>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1620</anyCreacio>
+    <autorObra>
+      <Autor rdf:about="practica2_Class10030">
+        <epocaPintor rdf:resource="practica2_Class10013"/>
+        <estilAutor rdf:resource="practica2_Class10018"/>
+        <nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Al Ramar Abdul Tula</nom>
+        <nacionalitat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Marroc</nacionalitat>
+      </Autor>
+    </autorObra>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >El deu dels mars i del desert</nomObra>
+    <salaObra>
+      <SalaCronologica rdf:about="practica2_Class10053">
+        <epocaSala rdf:resource="practica2_Class10013"/>
+        <nomSala rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Sala Art Antic</nomSala>
+      </SalaCronologica>
+    </salaObra>
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >6</complexitat>
+    <estilObra rdf:resource="practica2_Class10018"/>
+    <midaObra>
+      <Mida rdf:about="practica2_Class10029">
+        <alcada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >200</alcada>
+        <amplada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >300</amplada>
+      </Mida>
+    </midaObra>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >7</rellevancia>
+    <tematicaObra>
+      <Tematica rdf:about="practica2_Class10005">
+        <tematica rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Religio</tematica>
+      </Tematica>
+    </tematicaObra>
+  </Obra>
+  <SalaTematica rdf:about="practica2_Class10007">
+    <nomSala rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sala Amor</nomSala>
+    <tematicaSala rdf:resource="practica2_Class94"/>
+  </SalaTematica>
+  <Obra rdf:about="practica2_Class10048">
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Zeus i Odin</nomObra>
+    <salaObra rdf:resource="practica2_Class92"/>
+    <epocaObra rdf:resource="practica2_Class1"/>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >6</rellevancia>
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >6</complexitat>
+    <midaObra>
+      <Mida rdf:about="practica2_Class10025">
+        <alcada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >100</alcada>
+        <amplada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >200</amplada>
+      </Mida>
+    </midaObra>
+    <estilObra>
+      <Estil rdf:about="practica2_Class83">
+        <estil rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Romanic</estil>
+      </Estil>
+    </estilObra>
+    <tematicaObra>
+      <Tematica rdf:about="practica2_Class10004">
+        <tematica rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Mitologia</tematica>
+      </Tematica>
+    </tematicaObra>
+    <autorObra>
+      <Autor rdf:about="practica2_Class10034">
+        <estilAutor>
+          <Estil rdf:about="practica2_Class10016">
+            <estil rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Gotic</estil>
+          </Estil>
+        </estilAutor>
+        <epocaPintor rdf:resource="practica2_Class1"/>
+        <nacionalitat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Catalunya</nacionalitat>
+        <nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Nil Velazquez</nom>
+      </Autor>
+    </autorObra>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2015</anyCreacio>
+  </Obra>
+  <Obra rdf:about="practica2_Class20007">
+    <estilObra rdf:resource="practica2_Class10018"/>
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >5</complexitat>
+    <tematicaObra>
+      <Tematica rdf:about="practica2_Class95">
+        <tematica rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Odi</tematica>
+      </Tematica>
+    </tematicaObra>
+    <autorObra rdf:resource="practica2_Class10030"/>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Desert incendiat</nomObra>
+    <epocaObra rdf:resource="practica2_Class10013"/>
+    <salaObra rdf:resource="practica2_Class10053"/>
+    <midaObra rdf:resource="practica2_Class10028"/>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1600</anyCreacio>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3</rellevancia>
+  </Obra>
+  <Obra rdf:about="practica2_Class10047">
+    <epocaObra rdf:resource="practica2_Class1"/>
+    <midaObra>
+      <Mida rdf:about="practica2_Class10027">
+        <amplada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >150</amplada>
+        <alcada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >150</alcada>
+      </Mida>
+    </midaObra>
+    <tematicaObra rdf:resource="practica2_Class95"/>
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >9</complexitat>
+    <estilObra>
+      <Estil rdf:about="practica2_Class79">
+        <estil rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Barroc</estil>
+      </Estil>
+    </estilObra>
+    <salaObra rdf:resource="practica2_Class10051"/>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >7</rellevancia>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1820</anyCreacio>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >La vida en confinament</nomObra>
+    <autorObra>
+      <Autor rdf:about="practica2_Class10036">
+        <nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Mono Liso</nom>
+        <nacionalitat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Italia</nacionalitat>
+        <estilAutor>
+          <Estil rdf:about="practica2_Class82">
+            <estil rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Renaixement</estil>
+          </Estil>
+        </estilAutor>
+        <epocaPintor rdf:resource="practica2_Class1"/>
+      </Autor>
+    </autorObra>
+  </Obra>
+  <SalaTematica rdf:about="practica2_Class93">
+    <nomSala rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sala Paisatge</nomSala>
+    <tematicaSala>
+      <Tematica rdf:about="practica2_Class97">
+        <tematica rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Paisatge</tematica>
+      </Tematica>
+    </tematicaSala>
+  </SalaTematica>
+  <Obra rdf:about="practica2_Class20006">
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1500</anyCreacio>
+    <salaObra>
+      <SalaCronologica rdf:about="practica2_Class10054">
+        <nomSala rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Sala Alta Edat Mitjana</nomSala>
+        <epocaSala>
+          <Epoca rdf:about="practica2_Class10012">
+            <epoca rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Alta Edat Mitjana</epoca>
+          </Epoca>
+        </epocaSala>
+      </SalaCronologica>
+    </salaObra>
+    <epocaObra rdf:resource="practica2_Class10012"/>
+    <midaObra rdf:resource="practica2_Class10020"/>
+    <tematicaObra rdf:resource="practica2_Class10004"/>
+    <autorObra>
+      <Autor rdf:about="practica2_Class10037">
+        <estilAutor rdf:resource="practica2_Class79"/>
+        <nacionalitat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Turquia</nacionalitat>
+        <epocaPintor rdf:resource="practica2_Class10012"/>
+        <nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Jordi Gorchs</nom>
+      </Autor>
+    </autorObra>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C'pillins</nomObra>
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >8</complexitat>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >10</rellevancia>
+    <estilObra rdf:resource="practica2_Class82"/>
+  </Obra>
+  <SalaTematica rdf:about="practica2_Class10009">
+    <nomSala rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sala Religio</nomSala>
+    <tematicaSala rdf:resource="practica2_Class10005"/>
+  </SalaTematica>
+  <Obra rdf:about="practica2_Class10056">
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >10</complexitat>
+    <estilObra rdf:resource="practica2_Class79"/>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >La Chant de Macaco</nomObra>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >10</rellevancia>
+    <midaObra>
+      <Mida rdf:about="practica2_Class84">
+        <amplada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >500</amplada>
+        <alcada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >300</alcada>
+      </Mida>
+    </midaObra>
+    <salaObra>
+      <SalaAutor rdf:about="practica2_Class91">
+        <nomSala rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Sala Luisillo de Macaco</nomSala>
+        <autorSala>
+          <Autor rdf:about="practica2_Class76">
+            <nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Luisillo de Macaco</nom>
+            <nacionalitat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Peru</nacionalitat>
+            <epocaPintor rdf:resource="practica2_Class5"/>
+            <estilAutor rdf:resource="practica2_Class79"/>
+          </Autor>
+        </autorSala>
+      </SalaAutor>
+    </salaObra>
+    <epocaObra rdf:resource="practica2_Class5"/>
+    <tematicaObra>
+      <Tematica rdf:about="practica2_Class10003">
+        <tematica rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Fruita</tematica>
+      </Tematica>
+    </tematicaObra>
+    <autorObra rdf:resource="practica2_Class76"/>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2020</anyCreacio>
+  </Obra>
+  <Obra rdf:about="practica2_Class10046">
+    <autorObra>
+      <Autor rdf:about="practica2_Class10038">
+        <nacionalitat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Angola</nacionalitat>
+        <epocaPintor rdf:resource="practica2_Class5"/>
+        <estilAutor rdf:resource="practica2_Class10019"/>
+        <nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Merino Xavier</nom>
+      </Autor>
+    </autorObra>
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >7</complexitat>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >6</rellevancia>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Efectes visuals</nomObra>
+    <salaObra rdf:resource="practica2_Class92"/>
+    <epocaObra rdf:resource="practica2_Class5"/>
+    <midaObra>
+      <Mida rdf:about="practica2_Class10022">
+        <alcada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >50</alcada>
+        <amplada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >90</amplada>
+      </Mida>
+    </midaObra>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1990</anyCreacio>
+    <estilObra>
+      <Estil rdf:about="practica2_Class10017">
+        <estil rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Manierisme</estil>
+      </Estil>
+    </estilObra>
+    <tematicaObra>
+      <Tematica rdf:about="practica2_Class10006">
+        <tematica rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Naturalesa</tematica>
+      </Tematica>
+    </tematicaObra>
+  </Obra>
+  <Obra rdf:about="practica2_Class20005">
+    <autorObra>
+      <Autor rdf:about="practica2_Class10031">
+        <epocaPintor rdf:resource="practica2_Class5"/>
+        <nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Aitor Menta</nom>
+        <nacionalitat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >España</nacionalitat>
+        <estilAutor rdf:resource="practica2_Class10015"/>
+      </Autor>
+    </autorObra>
+    <estilObra rdf:resource="practica2_Class10017"/>
+    <tematicaObra>
+      <Tematica rdf:about="practica2_Class10001">
+        <tematica rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Carrers</tematica>
+      </Tematica>
+    </tematicaObra>
+    <epocaObra rdf:resource="practica2_Class5"/>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >4</rellevancia>
+    <salaObra rdf:resource="practica2_Class92"/>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1960</anyCreacio>
+    <midaObra rdf:resource="practica2_Class10029"/>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tsunami en Madrid</nomObra>
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3</complexitat>
+  </Obra>
+  <SalaTematica rdf:about="practica2_Class10008">
+    <tematicaSala rdf:resource="practica2_Class10006"/>
+    <nomSala rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sala Naturalesa</nomSala>
+  </SalaTematica>
+  <Obra rdf:about="practica2_Class10055">
+    <midaObra rdf:resource="practica2_Class10029"/>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >8</rellevancia>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >El colom de la platz</nomObra>
+    <epocaObra rdf:resource="practica2_Class5"/>
+    <estilObra rdf:resource="practica2_Class10015"/>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2015</anyCreacio>
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >10</complexitat>
+    <autorObra rdf:resource="practica2_Class76"/>
+    <tematicaObra>
+      <Tematica rdf:about="practica2_Class10002">
+        <tematica rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Noblesa</tematica>
+      </Tematica>
+    </tematicaObra>
+    <salaObra rdf:resource="practica2_Class91"/>
+  </Obra>
+  <Obra rdf:about="practica2_Class10039">
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1963</anyCreacio>
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3</complexitat>
+    <autorObra rdf:resource="practica2_Class10031"/>
+    <tematicaObra rdf:resource="practica2_Class10001"/>
+    <epocaObra rdf:resource="practica2_Class5"/>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2</rellevancia>
+    <estilObra rdf:resource="practica2_Class10017"/>
+    <midaObra rdf:resource="practica2_Class10020"/>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Lluvias en la Calle</nomObra>
+    <salaObra rdf:resource="practica2_Class92"/>
+  </Obra>
+  <Obra rdf:about="practica2_Class10044">
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >4</rellevancia>
+    <autorObra rdf:resource="practica2_Class10032"/>
+    <midaObra rdf:resource="practica2_Class10020"/>
+    <epocaObra rdf:resource="practica2_Class5"/>
+    <salaObra rdf:resource="practica2_Class92"/>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1866</anyCreacio>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Al pot petit hi ha la bona confitura</nomObra>
+    <estilObra>
+      <Estil rdf:about="practica2_Class80">
+        <estil rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Cubisme</estil>
+      </Estil>
+    </estilObra>
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</complexitat>
+    <tematicaObra rdf:resource="practica2_Class10002"/>
+  </Obra>
+  <Obra rdf:about="practica2_Class20004">
+    <epocaObra rdf:resource="practica2_Class5"/>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >7</rellevancia>
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >6</complexitat>
+    <estilObra rdf:resource="practica2_Class10017"/>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >El verde caracol</nomObra>
+    <tematicaObra rdf:resource="practica2_Class10006"/>
+    <autorObra rdf:resource="practica2_Class10038"/>
+    <midaObra rdf:resource="practica2_Class10022"/>
+    <salaObra rdf:resource="practica2_Class92"/>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1995</anyCreacio>
+  </Obra>
+  <Mida rdf:about="practica2_Class10021">
+    <alcada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >50</alcada>
+    <amplada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >70</amplada>
+  </Mida>
+  <Obra rdf:about="practica2_Class90">
+    <tematicaObra rdf:resource="practica2_Class97"/>
+    <epocaObra rdf:resource="practica2_Class5"/>
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >7</complexitat>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2010</anyCreacio>
+    <salaObra rdf:resource="practica2_Class91"/>
+    <midaObra rdf:resource="practica2_Class10028"/>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >10</rellevancia>
+    <autorObra rdf:resource="practica2_Class76"/>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >La historia de llama</nomObra>
+    <estilObra rdf:resource="practica2_Class79"/>
+  </Obra>
+  <Obra rdf:about="practica2_Class20003">
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >6</complexitat>
+    <estilObra rdf:resource="practica2_Class10017"/>
+    <salaObra rdf:resource="practica2_Class92"/>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >8</rellevancia>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >La banana</nomObra>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2017</anyCreacio>
+    <midaObra>
+      <Mida rdf:about="practica2_Class10023">
+        <amplada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >70</amplada>
+        <alcada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >90</alcada>
+      </Mida>
+    </midaObra>
+    <epocaObra rdf:resource="practica2_Class1"/>
+    <tematicaObra rdf:resource="practica2_Class10003"/>
+    <autorObra rdf:resource="practica2_Class10034"/>
+  </Obra>
+  <Obra rdf:about="practica2_Class20002">
+    <autorObra>
+      <Autor rdf:about="practica2_Class10035">
+        <nacionalitat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Holanda</nacionalitat>
+        <epocaPintor>
+          <Epoca rdf:about="practica2_Class10011">
+            <epoca rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Baixa Edat Mitjana</epoca>
+          </Epoca>
+        </epocaPintor>
+        <estilAutor rdf:resource="practica2_Class83"/>
+        <nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Arnau Rembrandt</nom>
+      </Autor>
+    </autorObra>
+    <epocaObra rdf:resource="practica2_Class10011"/>
+    <tematicaObra rdf:resource="practica2_Class10003"/>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bodegon con empanada de pavo</nomObra>
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >8</complexitat>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1113</anyCreacio>
+    <midaObra>
+      <Mida rdf:about="practica2_Class10026">
+        <alcada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >100</alcada>
+        <amplada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >150</amplada>
+      </Mida>
+    </midaObra>
+    <salaObra>
+      <SalaCronologica rdf:about="practica2_Class10052">
+        <epocaSala rdf:resource="practica2_Class10011"/>
+        <nomSala rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Sala Baixa Edat Mitjana</nomSala>
+      </SalaCronologica>
+    </salaObra>
+    <estilObra rdf:resource="practica2_Class83"/>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >6</rellevancia>
+  </Obra>
+  <Obra rdf:about="practica2_Class10042">
+    <midaObra>
+      <Mida rdf:about="practica2_Class10024">
+        <amplada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >100</amplada>
+        <alcada rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >100</alcada>
+      </Mida>
+    </midaObra>
+    <tematicaObra>
+      <Tematica rdf:about="practica2_Class96">
+        <tematica rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Retrat</tematica>
+      </Tematica>
+    </tematicaObra>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Los panas</nomObra>
+    <salaObra rdf:resource="practica2_Class10054"/>
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >6</complexitat>
+    <autorObra rdf:resource="practica2_Class10037"/>
+    <epocaObra rdf:resource="practica2_Class10012"/>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1489</anyCreacio>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >10</rellevancia>
+    <estilObra rdf:resource="practica2_Class10019"/>
+  </Obra>
+  <Obra rdf:about="practica2_Class20001">
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >5</complexitat>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Solo carne</nomObra>
+    <midaObra rdf:resource="practica2_Class10020"/>
+    <tematicaObra rdf:resource="practica2_Class95"/>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</rellevancia>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1615</anyCreacio>
+    <estilObra rdf:resource="practica2_Class10018"/>
+    <salaObra rdf:resource="practica2_Class10053"/>
+    <autorObra rdf:resource="practica2_Class10030"/>
+    <epocaObra rdf:resource="practica2_Class10013"/>
+  </Obra>
+  <Obra rdf:about="practica2_Class10041">
+    <complexitat rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >9</complexitat>
+    <autorObra rdf:resource="practica2_Class10035"/>
+    <anyCreacio rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1111</anyCreacio>
+    <nomObra rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >La dama especial</nomObra>
+    <estilObra rdf:resource="practica2_Class83"/>
+    <midaObra rdf:resource="practica2_Class10025"/>
+    <epocaObra rdf:resource="practica2_Class10011"/>
+    <salaObra rdf:resource="practica2_Class10052"/>
+    <tematicaObra rdf:resource="practica2_Class96"/>
+    <rellevancia rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >7</rellevancia>
+  </Obra>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->

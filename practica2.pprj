@@ -1,4 +1,4 @@
-; Mon Dec 07 19:15:34 CET 2020
+; Mon Dec 07 19:51:44 CET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -21,18 +21,18 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[practica2_ProjectKB_Class20124]
-		[practica2_ProjectKB_Class20125]
-		[practica2_ProjectKB_Class20126]
-		[practica2_ProjectKB_Class20127]
-		[practica2_ProjectKB_Class20128]
-		[practica2_ProjectKB_Class20129]
-		[practica2_ProjectKB_Class20130]
-		[practica2_ProjectKB_Class20131]
-		[practica2_ProjectKB_Class20132]
-		[practica2_ProjectKB_Class20133]
-		[practica2_ProjectKB_Class20134]
-		[practica2_ProjectKB_Class20135]))
+		[practica2_ProjectKB_Class20141]
+		[practica2_ProjectKB_Class20142]
+		[practica2_ProjectKB_Class20143]
+		[practica2_ProjectKB_Class20144]
+		[practica2_ProjectKB_Class20145]
+		[practica2_ProjectKB_Class20146]
+		[practica2_ProjectKB_Class20147]
+		[practica2_ProjectKB_Class20148]
+		[practica2_ProjectKB_Class20149]
+		[practica2_ProjectKB_Class20150]
+		[practica2_ProjectKB_Class20151]
+		[practica2_ProjectKB_Class20152]))
 
 ([CLSES_TAB] of  Widget
 
@@ -88,11 +88,11 @@
 ([KB_789627_Class1] of  Map
 
 	(entries
-		[practica2_ProjectKB_Class20136]
-		[practica2_ProjectKB_Class20137]
-		[practica2_ProjectKB_Class20139]
-		[practica2_ProjectKB_Class20140])
-	(referenced_maps [practica2_ProjectKB_Class20138]))
+		[practica2_ProjectKB_Class20153]
+		[practica2_ProjectKB_Class20154]
+		[practica2_ProjectKB_Class20156]
+		[practica2_ProjectKB_Class20157])
+	(referenced_maps [practica2_ProjectKB_Class20155]))
 
 ([KB_789627_Class100] of  String
 
@@ -324,91 +324,91 @@
 ([practica2_ProjectKB_Class20] of  Property_List
 )
 
-([practica2_ProjectKB_Class20124] of  String
+([practica2_ProjectKB_Class20141] of  String
 
 	(name "Mida")
 	(string_value "alcada{}amplada"))
 
-([practica2_ProjectKB_Class20125] of  String
+([practica2_ProjectKB_Class20142] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([practica2_ProjectKB_Class20126] of  String
+([practica2_ProjectKB_Class20143] of  String
 
 	(name "SalaTematica")
 	(string_value "nomSala"))
 
-([practica2_ProjectKB_Class20127] of  String
+([practica2_ProjectKB_Class20144] of  String
 
 	(name "SalaAutor")
 	(string_value "nomSala"))
 
-([practica2_ProjectKB_Class20128] of  String
+([practica2_ProjectKB_Class20145] of  String
 
 	(name "Autor")
 	(string_value "nom"))
 
-([practica2_ProjectKB_Class20129] of  String
+([practica2_ProjectKB_Class20146] of  String
 
 	(name "SalaCronologica")
 	(string_value "nomSala"))
 
-([practica2_ProjectKB_Class20130] of  String
+([practica2_ProjectKB_Class20147] of  String
 
 	(name "Epoca")
 	(string_value "epoca"))
 
-([practica2_ProjectKB_Class20131] of  String
+([practica2_ProjectKB_Class20148] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([practica2_ProjectKB_Class20132] of  String
+([practica2_ProjectKB_Class20149] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([practica2_ProjectKB_Class20133] of  String
+([practica2_ProjectKB_Class20150] of  String
 
 	(name "Estil")
 	(string_value "estil"))
 
-([practica2_ProjectKB_Class20134] of  String
+([practica2_ProjectKB_Class20151] of  String
 
 	(name "Tematica")
 	(string_value "tematica"))
 
-([practica2_ProjectKB_Class20135] of  String
+([practica2_ProjectKB_Class20152] of  String
 
 	(name "Obra")
 	(string_value "nomObra"))
 
-([practica2_ProjectKB_Class20136] of  Map_Entry
+([practica2_ProjectKB_Class20153] of  Map_Entry
 
 	(key "add_name_on_instance_form")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([practica2_ProjectKB_Class20137] of  Map_Entry
+([practica2_ProjectKB_Class20154] of  Map_Entry
 
 	(key "change_tracking_active")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([practica2_ProjectKB_Class20138] of  Map
+([practica2_ProjectKB_Class20155] of  Map
 )
 
-([practica2_ProjectKB_Class20139] of  Map_Entry
+([practica2_ProjectKB_Class20156] of  Map_Entry
 
 	(key "InstanceDisplay.yellow_stickies")
 	(key_class "java.lang.String")
-	(value "practica2_ProjectKB_Class20138")
+	(value "practica2_ProjectKB_Class20155")
 	(value_class "java.util.Map"))
 
-([practica2_ProjectKB_Class20140] of  Map_Entry
+([practica2_ProjectKB_Class20157] of  Map_Entry
 
 	(key "suppress_instance_counting")
 	(key_class "java.lang.String")

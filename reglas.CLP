@@ -398,65 +398,79 @@
 	(assert (recomanacions-ordenades(recs ?llista_ord)))
 )
 
-(defrule mostrar-recomanacions::ordenar-recomanacions-per-sala "Ordena les recomanacions per a l'usuari tenint en compte les sales"
+(defrule mostrar-recomanacions::agafar-recomanacions-per-dia "Reparteix les recomanacions entre els dies de la visita"
 	(recomanacions-ordenades (recs $?llista_recs))
+	?info <- (info-grup (numdiesvisita ?numdiesvisita) (horesvisita ?horesvisita))
 	=>
-	(bind $?llista_ord (create$ ))
-	(bind ?elem (nth$ 1 ?llista_recs))
-	(while (not (eq (length$ $?llista_recs) 0)) do
-		(bind ?elem_millor (millor-quadre ?elem $?llista_recs))
-		(bind ?elem ?elem_millor)
-		(bind $?llista_recs (delete-member$ $?llista_recs ?elem_millor))
-		(bind $?llista_ord (insert$ $?llista_ord (+ (length$ $?llista_ord) 1) ?elem_millor))
+	(bind ?minutsDia (* 60 ?horesvisita))
+	(bind $?llista (create$ ))
+	(loop-for-count (?i 1 ?numdiesvisita) do
+		(bind $?llista (insert$ $?llista (+ (length$ $?llista) 1) (make-instance (gensym) of Dia (dia ?i))))
 	)
-	(assert (recomanacions-ordenades-sala (recs ?llista_ord)))
+	(foreach ?dia ?llista
+		(if (eq 0 (length$ $?llista_recs)) then
+			(break)
+		)
+		(bind ?minutsAcutal 0)
+		(bind $?llistaRecDia (create$ ))
+		(while (< ?minutsAcutal ?minutsDia) do
+			(if (eq 0 (length$ $?llista_recs)) then
+				(break)
+			)
+
+			(bind ?indexMillor (best-fit ?minutsAcutal ?minutsDia ?llista_recs))
+			(if (> ?indexMillor (length$ $?llista_recs))then(break))
+			(bind ?elem (nth$ ?indexMillor ?llista_recs))
+			(bind ?temps (send ?elem get-temps))
+			(bind $?llista_recs (delete-member$ $?llista_recs ?elem))
+
+			(bind $?llistaRecDia (insert$ $?llistaRecDia (+ (length$ $?llistaRecDia) 1) ?elem))
+			(bind ?minutsAcutal (+ ?minutsAcutal ?temps))
+		)
+		(send ?dia put-recomanacions $?llistaRecDia)
+	)
+	(assert (recomanacions-diaries (recs $?llista)))
+)
+
+(defrule mostrar-recomanacions::agrupar-per-sales "Agrupa les recomanacions diaries per sales"
+	(recomanacions-diaries (recs $?llista_recs))
+	=>
+	(loop-for-count (?d 1 (length$ $?llista_recs)) do
+		(bind $?llista_ord (create$ ))
+		(bind ?dia (nth$ ?d ?llista_recs))
+		(bind ?recomanacions (send ?dia get-recomanacions))
+
+		(bind ?elem (nth$ 1 ?recomanacions))
+		(while (not (eq (length$ $?recomanacions) 0)) do
+			(bind ?elem_millor (millor-quadre ?elem $?recomanacions))
+			(bind ?elem ?elem_millor)
+			(bind $?recomanacions (delete-member$ $?recomanacions ?elem_millor))
+			(bind $?llista_ord (insert$ $?llista_ord (+ (length$ $?llista_ord) 1) ?elem_millor))
+		)
+		(send ?dia put-recomanacions $?llista_ord)
+	)
+	(assert (recomanacions-ordenades-sala (recs $?llista_recs)))
 )
 
 (defrule mostrar-recomanacions::imprimeix-recomanacions-per-ordre "imprimeix les recomanacions en funcio de la puntuacio que tenen"
 	(recomanacions-ordenades-sala (recs $?llista_recs))
-	(info-grup (horesvisita ?hores))
-	(info-grup (numdiesvisita ?dies))
 	=>
 	(printout t crlf)
 	(printout t crlf)
 	(printout t "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" crlf)
 	(printout t " Les nostres recomanacions son:" crlf)
 
-	(bind ?index 1)
-	(bind ?minutsDia (* ?hores 60))
-	(bind ?impresMissatgeLimit 0)
-	(loop-for-count (?d 1 ?dies) do
-		(if (> ?index (length$ $?llista_recs)) then
-			(if (eq ?impresMissatgeLimit 0) then
-				(printout t crlf)
-				(printout t "  -- Ens sap greu. No tenim mes quadres a MUSEU FIB --")
-				(printout t crlf)
-				(bind ?impresMissatgeLimit 1)
-			)
-			(break)
-		)
+	(loop-for-count (?d 1 (length$ $?llista_recs)) do
 		(printout t crlf)
 		(bind ?linea1 (format nil "  Dia %d:" ?d))
 		(printout t ?linea1 crlf)
-		(bind ?minutsAcutal 0)
-		(bind ?h 0)
-		(while (< ?minutsAcutal ?minutsDia) do
-			(if (> ?index (length$ $?llista_recs)) then
-				(if (eq ?impresMissatgeLimit 0) then
-					(printout t crlf)
-					(printout t "  -- Ens sap greu. No tenim mes quadres a MUSEU FIB --")
-					(printout t crlf)
-					(bind ?impresMissatgeLimit 1)
-				)
-				(break)
-			)
 
-			(bind ?elem (nth$ ?index ?llista_recs))
+		(bind ?dia (nth$ ?d ?llista_recs))
+		(bind ?recomanacions (send ?dia get-recomanacions))
 
+		(loop-for-count (?r 1 (length$ $?recomanacions)) do
+			(bind ?elem (nth$ ?r ?recomanacions))
 			(bind ?temps (send ?elem get-temps))
-
-			(if (> (+ ?minutsAcutal ?temps) ?minutsDia) then (break))
-
 			(bind ?obra (send ?elem get-obra))
 			(bind ?nom (send ?obra get-nomObra))
 
@@ -472,23 +486,18 @@
 			(bind ?tem (send ?obra get-tematicaObra))
 			(bind ?nomTematica (send ?tem get-tematica))
 
-			(bind ?rell (send ?obra get-rellevancia))
+			(bind ?rell (send ?elem get-puntuacio))
 
 			(bind ?nomSala (send (send ?obra get-salaObra) get-nomSala))
 
-			(bind ?linea (format nil "  %d. %s --> %d minuts" ?h ?nom ?temps))
+			(bind ?linea (format nil "  %d. %s --> %d minuts" ?r ?nom ?temps))
 			(printout t ?linea crlf)
 			(bind ?linea (format nil "     Informacio de la obra:"))
 			(printout t ?linea crlf)
 			(bind ?linea (format nil "     - Autor: %s, Epoca: %s, Estil: %s, Tematica: %s, Sala: %s, Rellevancia: %d" ?nomAutor ?nomEpoca ?nomEstil ?nomTematica ?nomSala ?rell))
 			(printout t ?linea crlf)
-
-			(bind ?index (+ ?index 1))
-			(bind ?h (+ ?h 1))
-			(bind ?minutsAcutal (+ ?minutsAcutal ?temps))
 		)
 	)
-
 	(printout t crlf)
 	(printout t " Esperem que us agradin les obres i, benviguts a MUSEU FIB." crlf)
 	(printout t "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" crlf)

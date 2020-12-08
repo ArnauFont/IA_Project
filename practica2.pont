@@ -1,4 +1,4 @@
-; Mon Dec 07 19:15:34 CET 2020
+; Mon Dec 07 19:51:44 CET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -47,6 +47,7 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot nacionalitat
+;+		(comment "On va neixer l'autor")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -55,11 +56,13 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot estilAutor
+;+		(comment "Estil principal de l'autor")
 		(type INSTANCE)
 ;+		(allowed-classes Estil)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot nom
+;+		(comment "Nom de l'autor")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -89,19 +92,8 @@
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot practica2_Class3
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot KB_120706_Class51
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot KB_120706_Class53
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot epocaPintor
+;+		(comment "Epoca en la que el pintor va fer les seves obres d'art")
 		(type INSTANCE)
 ;+		(allowed-classes Epoca)
 ;+		(cardinality 0 1)
@@ -127,24 +119,28 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass Autor "hola aixo es una clase per un autor"
+(defclass Autor "Representa un autor d'una obra d'art"
 	(is-a USER)
 	(role concrete)
 	(single-slot estilAutor
+;+		(comment "Estil principal de l'autor")
 		(type INSTANCE)
 ;+		(allowed-classes Estil)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot epocaPintor
+;+		(comment "Epoca en la que el pintor va fer les seves obres d'art")
 		(type INSTANCE)
 ;+		(allowed-classes Epoca)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot nom
+;+		(comment "Nom de l'autor")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot nacionalitat
+;+		(comment "On va neixer l'autor")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))

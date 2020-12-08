@@ -48,6 +48,10 @@
 	(multislot recs (type INSTANCE))
 )
 
+(deftemplate MAIN::recomanacions-diaries
+	(multislot recs (type INSTANCE))
+)
+
 (deftemplate MAIN::recomanacions-ordenades-sala
 	(multislot recs (type INSTANCE))
 )
@@ -59,4 +63,11 @@
   (slot obra (type INSTANCE)	(create-accessor read-write))
   (slot puntuacio (type INTEGER) (create-accessor read-write))
 	(slot temps (type INTEGER))
+)
+
+(defclass MAIN::Dia
+	(is-a USER)
+	(role concrete)
+	(slot dia (type INTEGER))
+  (multislot recomanacions (type INSTANCE)	(create-accessor read-write))
 )
