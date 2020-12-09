@@ -1,4 +1,4 @@
-; Mon Dec 07 19:51:44 CET 2020
+; Wed Dec 09 19:38:38 CET 2020
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -8,41 +8,49 @@
 	(is-a USER)
 	(role abstract)
 	(single-slot epocaSala
+;+		(comment "Epoca de la sala")
 		(type INSTANCE)
 ;+		(allowed-classes Epoca)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot salaObra
+;+		(comment "Sala on es situa la obra en el MUSEU FIB")
 		(type INSTANCE)
 ;+		(allowed-classes Sala)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot autorObra
+;+		(comment "Autor de la obra en questio")
 		(type INSTANCE)
 ;+		(allowed-classes Autor)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot midaObra
+;+		(comment "Mida de la obra")
 		(type INSTANCE)
 ;+		(allowed-classes Mida)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot tematicaSala
+;+		(comment "Tematica de la sala")
 		(type INSTANCE)
 ;+		(allowed-classes Tematica)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot autorSala
+;+		(comment "Autor de la sala")
 		(type INSTANCE)
 ;+		(allowed-classes Autor)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot tematicaObra
+;+		(comment "Tematica de la obra")
 		(type INSTANCE)
 ;+		(allowed-classes Tematica)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot anyCreacio
+;+		(comment "Any de creacio de la obra")
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -52,6 +60,7 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot tematica
+;+		(comment "Nom de la tematica en questio")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -67,28 +76,34 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot estilObra
+;+		(comment "Estil de la obra en questio")
 		(type INSTANCE)
 ;+		(allowed-classes Estil)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot amplada
+;+		(comment "Mida horitzontal")
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot nomSala
+;+		(comment "Nom que identifica la sala en el MUSEU FIB")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot epocaObra
+;+		(comment "Epoca en que la obra va ser realitzada")
 		(type INSTANCE)
 ;+		(allowed-classes Epoca)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot epoca
+;+		(comment "Nom del periode historic")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot rellevancia
+;+		(comment "Importancia de la obra, calculat a partir de la complexitat, la transcendencia d'aquesta i altres factors")
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -99,6 +114,7 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot complexitat
+;+		(comment "Valor que respresenta la complexitat de la obra, tenint en compte els elements que hi apareixen, la mida, etc.")
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -106,15 +122,18 @@
 		(type FLOAT)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot nomObra
+	(single-slot estil
+;+		(comment "Nom que indentifica l'estil")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot estil
+	(single-slot nomObra
+;+		(comment "Nom de la obra que l'identifica")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot alcada
+;+		(comment "Mida vertical")
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
@@ -145,123 +164,142 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass Estil
+(defclass Estil "Conjunt d'atributs que caracteritzen a un autor o a una obra"
 	(is-a USER)
 	(role concrete)
 	(single-slot estil
+;+		(comment "Nom que indentifica l'estil")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass Mida
+(defclass Mida "Mida d'una obra"
 	(is-a USER)
 	(role concrete)
-	(single-slot amplada
+	(single-slot alcada
+;+		(comment "Mida vertical")
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot alcada
+	(single-slot amplada
+;+		(comment "Mida horitzontal")
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass Obra
+(defclass Obra "Creacio realitzada per un autor que copia, imita o transcendeix la realitat des del seu punt de vista. Esta realitzada en una certa epoca, i te altres atributs, com l'estil."
 	(is-a USER)
 	(role concrete)
-	(single-slot salaObra
-		(type INSTANCE)
-;+		(allowed-classes Sala)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot epocaObra
+;+		(comment "Epoca en que la obra va ser realitzada")
 		(type INSTANCE)
 ;+		(allowed-classes Epoca)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(single-slot salaObra
+;+		(comment "Sala on es situa la obra en el MUSEU FIB")
+		(type INSTANCE)
+;+		(allowed-classes Sala)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot autorObra
+;+		(comment "Autor de la obra en questio")
 		(type INSTANCE)
 ;+		(allowed-classes Autor)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot midaObra
+;+		(comment "Mida de la obra")
 		(type INSTANCE)
 ;+		(allowed-classes Mida)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot rellevancia
+;+		(comment "Importancia de la obra, calculat a partir de la complexitat, la transcendencia d'aquesta i altres factors")
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot tematicaObra
+;+		(comment "Tematica de la obra")
 		(type INSTANCE)
 ;+		(allowed-classes Tematica)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot complexitat
+;+		(comment "Valor que respresenta la complexitat de la obra, tenint en compte els elements que hi apareixen, la mida, etc.")
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot estilObra
+;+		(comment "Estil de la obra en questio")
 		(type INSTANCE)
 ;+		(allowed-classes Estil)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot anyCreacio
+;+		(comment "Any de creacio de la obra")
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot nomObra
+;+		(comment "Nom de la obra que l'identifica")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass Sala
+(defclass Sala "Habitacio on es mostren un conjunt d'obres. Pot ser una sala dedicada a un sol autor, a una epoca o be a una tematica en concret"
 	(is-a USER)
 	(role abstract)
 	(single-slot nomSala
+;+		(comment "Nom que identifica la sala en el MUSEU FIB")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass SalaAutor
+(defclass SalaAutor "Sala dedicada a un autor"
 	(is-a Sala)
 	(role concrete)
 	(single-slot autorSala
+;+		(comment "Autor de la sala")
 		(type INSTANCE)
 ;+		(allowed-classes Autor)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass SalaCronologica
+(defclass SalaCronologica "Sala dedicada a una epoca"
 	(is-a Sala)
 	(role concrete)
 	(single-slot epocaSala
+;+		(comment "Epoca de la sala")
 		(type INSTANCE)
 ;+		(allowed-classes Epoca)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass SalaTematica
+(defclass SalaTematica "Sala dedicada a una tematica"
 	(is-a Sala)
 	(role concrete)
 	(single-slot tematicaSala
+;+		(comment "Tematica de la sala")
 		(type INSTANCE)
 ;+		(allowed-classes Tematica)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass Tematica
+(defclass Tematica "Tema general d'una obra"
 	(is-a USER)
 	(role concrete)
 	(single-slot tematica
+;+		(comment "Nom de la tematica en questio")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass Epoca
+(defclass Epoca "Periode historic reconegut"
 	(is-a USER)
 	(role concrete)
 	(single-slot epoca
+;+		(comment "Nom del periode historic")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))

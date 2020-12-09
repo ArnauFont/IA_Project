@@ -465,7 +465,7 @@
 		(if (eq ?quadresRecomanats ?maxQuadres) then
 			(printout t crlf)
 			(printout t "  ~~  Ens sap greu, al MUSEU FIB no ens queden mes quadres per recomanar.  ~~" crlf)
-			(printout t "  ~~      Si voleu, podeu anar a la tenda del MUSEU FIB, o al bar FIB      ~~" crlf)
+			(printout t "  ~~      Si voleu, podeu anar a la botiga del MUSEU FIB, o al bar FIB     ~~" crlf)
 			(break)
 		)
 		(printout t crlf)
