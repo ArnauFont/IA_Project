@@ -1,7 +1,12 @@
-JOCS DE PROVA
+~~~~~  JOCS DE PROVA  ~~~~~
+
+JOC DE PROVA 1:
 
 CONEIXEDOR D'ART
 
+Com l'hem escollit: Calia incloure com respondria el sistema en un cas on anes una unica persona que respon totes les preguntes del test be i te algunes preferencies
+Explicacio sortida: El temps de visita de les obres es adequat al tipus d'usuari, l'ordre de la rellevancia es correspon amb les preferencies i ordena les obres per sala i aprofita el maxim que pot el temps.
+                    Donat que l'usuari volia anar 4 dies i 5 hores i la suma dels temps de visita no es superior, apareix el missatge de que no queden més obres.
 Input:
 1
 4
@@ -96,8 +101,13 @@ Output:
  Esperem que us agradin les obres i, benviguts a MUSEU FIB.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+JOC DE PROVA 2:
 
 CONEIXEDOR D'ART SENSE PREFERENCIES
+
+Com l'hem escollit: Calia incloure com respondria el sistema en un cas on anes una unica persona que respon totes les preguntes del test be i no te preferencies
+Explicacio sortida: El temps de visita de les obres es adequat al tipus d'usuari ja que en aquest cas no li interessava res en concret, l'ordre de la rellevancia es correspon amb la rellevancia implicita de les obres i ordena les obres per sala i aprofita el maxim que pot el temps.
+                    Donat que l'usuari volia anar 4 dies i 5 hores i la suma dels temps de visita no es superior, apareix el missatge de que no queden més obres.
 
 Input:
 1
@@ -191,8 +201,16 @@ Output:
  Esperem que us agradin les obres i, benviguts a MUSEU FIB.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+JOC DE PROVA 3:
 
 CAS REAL UN JOVE
+
+Com l'hem escollit: Calia incloure com respondria el sistema en un cas on anes una unica persona que no respon totes les preguntes del test be i te algunes preferencies
+Explicacio sortida: El temps de visita de les obres es adequat al tipus d'usuari ja que en aquest cas tot i no tenir un coineixement de 10, té les seves preferencies,
+                    l'ordre de la rellevancia es correspon amb la rellevancia implicita de les obres i les preferencies de l'usuari i
+                    ordena les obres per sala i aprofita el maxim que pot el temps.
+                    Donat que l'usuari volia anar 2 dies i 1 hores no es pot acabar totes les obres del museu, per tant no apareix el missatge que apareixia en el cas anterior.
+
 
 Input:
 1
@@ -240,7 +258,15 @@ Output:
  Esperem que us agradin les obres i, benviguts a MUSEU FIB.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+JOC DE PROVA 4:
+
 NO CONEIXEDOR D'ART SENSE PREFERENCIES
+
+Com l'hem escollit: Calia incloure com respondria el sistema en un cas on anes una unica persona que no respon cap pregunta be i not te algunes preferencies
+Explicacio sortida: El temps de visita de les obres es adequat al tipus d'usuari ja que en aquest cas tot no te preferencies i el temps de visita es el minim establert,
+                    l'ordre de la rellevancia es correspon amb la rellevancia implicita de les obres i
+                    ordena les obres per sala i aprofita el maxim que pot el temps.
+                    Donat que l'usuari volia anar 1 dies i 2 hores no pot arribar a completat tot el dia pero no surt el missatge perque es completa part del dia.
 
 Input:
 1
@@ -331,8 +357,15 @@ Output:
  Esperem que us agradin les obres i, benviguts a MUSEU FIB.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+JOC DE PROVA 5:
 
 GRUP MITJA NORMAL AMB ALGUNES PREFERENCIES
+
+Com l'hem escollit: Calia incloure com respondria el sistema en un cas on anes un grup mitja que respon algunes de les preguntes be i te algunes preferencies
+Explicacio sortida: El temps de visita de les obres es adequat al tipus de grup ja que el temps de visita es superior en relacio a si fos un grup mes petit i es correspon amb les preferencies,
+                    l'ordre de la rellevancia es correspon amb la rellevancia implicita de les obres sumada a les preferencies del grup i
+                    ordena les obres per sala i aprofita el maxim que pot el temps.
+                    Donat el temps del que disposa el grup i el teps seleccionat, el grup no acaba les obres.
 
 Input:
 26
@@ -382,3 +415,311 @@ Output:
 
  Esperem que us agradin les obres i, benviguts a MUSEU FIB.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+JOC DE PROVA 6:
+
+GRUP GRAN CONEIXEDOR D'ART QUE TE TOT COM A PREFERENCIES
+
+Com l'hem escollit: Calia incloure un cas extrem on qui visita el museu és un grup gran que respon a totes les preguntes be i te tots els autos, tematiques, ... com a preferencia
+Explicacio sortida: El temps de visita de les obres es adequat al tipus de grup ja que el temps de visita es superior en relacio a si fos un grup mes petit i es correspon amb les preferencies,
+                    el temps no és exagerat tenint en compte la dimensio del grup i el coneixement d'art que tenen.
+                    L'ordre de la rellevancia es correspon amb la rellevancia implicita de les obres sumada a les preferencies del grup i
+                    ordena les obres per sala i aprofita el maxim que pot el temps.
+                    Donat el temps del que disposa el grup i el teps seleccionat, el grup no acaba les obres.
+
+Input:
+60
+4
+5
+1
+1
+3
+3
+4
+1
+2
+3
+1
+1
+1 2 3 4 5 6 7 8 9 10
+1 2 3 4 5
+1 2 3 4 5 6 7 8 9
+1 2 3 4 5 6 7 8 9 10
+
+Output:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Les nostres recomanacions son:
+
+  Dia 1:
+  1. Los panas --> 62 minuts
+     Informacio de la obra:
+     - Autor: Jordi Gorchs, Epoca: Alta Edat Mitjana, Estil: Preromanic, Tematica: Retrat, Sala: Sala Alta Edat Mitjana, Rellevancia: 30
+  2. C'pillins --> 62 minuts
+     Informacio de la obra:
+     - Autor: Jordi Gorchs, Epoca: Alta Edat Mitjana, Estil: Renaixement, Tematica: Mitologia, Sala: Sala Alta Edat Mitjana, Rellevancia: 30
+  3. La Chant de Macaco --> 62 minuts
+     Informacio de la obra:
+     - Autor: Luisillo de Macaco, Epoca: Contemporanea, Estil: Barroc, Tematica: Fruita, Sala: Sala Luisillo de Macaco, Rellevancia: 30
+  4. La historia de llama --> 62 minuts
+     Informacio de la obra:
+     - Autor: Luisillo de Macaco, Epoca: Contemporanea, Estil: Barroc, Tematica: Paisatge, Sala: Sala Luisillo de Macaco, Rellevancia: 30
+
+  Dia 2:
+  1. El colom de la platz --> 62 minuts
+     Informacio de la obra:
+     - Autor: Luisillo de Macaco, Epoca: Contemporanea, Estil: Expressionisme, Tematica: Noblesa, Sala: Sala Luisillo de Macaco, Rellevancia: 28
+  2. La banana --> 62 minuts
+     Informacio de la obra:
+     - Autor: Nil Velazquez, Epoca: Moderna, Estil: Manierisme, Tematica: Fruita, Sala: Sala Contemporanea, Rellevancia: 28
+  3. El carbassot fa el que pot --> 62 minuts
+     Informacio de la obra:
+     - Autor: Marcos Van Gal, Epoca: Contemporanea, Estil: Expressionisme, Tematica: Amor, Sala: Sala Contemporanea, Rellevancia: 28
+  4. El deu dels mars i del desert --> 62 minuts
+     Informacio de la obra:
+     - Autor: Al Ramar Abdul Tula, Epoca: Art Antic, Estil: Rococo, Tematica: Religio, Sala: Sala Art Antic, Rellevancia: 27
+
+  Dia 3:
+  1. La dama especial --> 62 minuts
+     Informacio de la obra:
+     - Autor: Arnau Rembrandt, Epoca: Baixa Edat Mitjana, Estil: Romanic, Tematica: Retrat, Sala: Sala Baixa Edat Mitjana, Rellevancia: 27
+  2. La vida en confinament --> 62 minuts
+     Informacio de la obra:
+     - Autor: Mono Liso, Epoca: Moderna, Estil: Barroc, Tematica: Odi, Sala: Sala Moderna, Rellevancia: 27
+  3. El verde caracol --> 62 minuts
+     Informacio de la obra:
+     - Autor: Merino Xavier, Epoca: Contemporanea, Estil: Manierisme, Tematica: Naturalesa, Sala: Sala Contemporanea, Rellevancia: 27
+  4. Efectes visuals --> 62 minuts
+     Informacio de la obra:
+     - Autor: Merino Xavier, Epoca: Contemporanea, Estil: Manierisme, Tematica: Naturalesa, Sala: Sala Contemporanea, Rellevancia: 26
+
+  Dia 4:
+  1. Zeus i Odin --> 62 minuts
+     Informacio de la obra:
+     - Autor: Nil Velazquez, Epoca: Moderna, Estil: Romanic, Tematica: Mitologia, Sala: Sala Contemporanea, Rellevancia: 26
+  2. Al pot petit hi ha la bona confitura --> 62 minuts
+     Informacio de la obra:
+     - Autor: Marcos Van Gal, Epoca: Contemporanea, Estil: Cubisme, Tematica: Noblesa, Sala: Sala Contemporanea, Rellevancia: 24
+  3. Tsunami en Madrid --> 62 minuts
+     Informacio de la obra:
+     - Autor: Aitor Menta, Epoca: Contemporanea, Estil: Manierisme, Tematica: Carrers, Sala: Sala Contemporanea, Rellevancia: 24
+  4. Bodegon con empanada de pavo --> 62 minuts
+     Informacio de la obra:
+     - Autor: Arnau Rembrandt, Epoca: Baixa Edat Mitjana, Estil: Romanic, Tematica: Fruita, Sala: Sala Baixa Edat Mitjana, Rellevancia: 26
+
+ Esperem que us agradin les obres i, benviguts a MUSEU FIB.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+JOC DE PROVA 7:
+
+GRUP GRAN CONEIXEDOR D'ART QUE NO TE TOT COM A PREFERENCIES
+
+Com l'hem escollit: Calia incloure un cas extrem on qui visita el museu és un grup gran que respon a totes les preguntes be i te algunes preferencies
+Explicacio sortida: El temps de visita de les obres es adequat al tipus de grup ja que el temps de visita es superior en relacio a si fos un grup mes petit i es correspon amb les preferencies,
+                    en aquest cas es pot comprovar que els casos on no coincideix totes les preferencies el temps es inferior als 62 minuts del cas anterior, el que permet aprofitar mes el temps.
+                    L'ordre de la rellevancia es correspon amb la rellevancia implicita de les obres sumada a les preferencies del grup i
+                    ordena les obres per sala i aprofita el maxim que pot el temps.
+                    Donat el temps del que disposa el grup i el teps seleccionat, el grup no acaba les obres.
+
+Input:
+60
+4
+5
+1
+1
+3
+3
+4
+1
+2
+3
+1
+1
+1 2 4 5 7 8 10
+1 3 5
+1 2 3 5 6 7 8 9
+1 2 3 4 5 7 9 10
+
+Output:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Les nostres recomanacions son:
+
+  Dia 1:
+  1. Los panas --> 62 minuts
+     Informacio de la obra:
+     - Autor: Jordi Gorchs, Epoca: Alta Edat Mitjana, Estil: Preromanic, Tematica: Retrat, Sala: Sala Alta Edat Mitjana, Rellevancia: 30
+  2. C'pillins --> 62 minuts
+     Informacio de la obra:
+     - Autor: Jordi Gorchs, Epoca: Alta Edat Mitjana, Estil: Renaixement, Tematica: Mitologia, Sala: Sala Alta Edat Mitjana, Rellevancia: 30
+  3. La Chant de Macaco --> 62 minuts
+     Informacio de la obra:
+     - Autor: Luisillo de Macaco, Epoca: Contemporanea, Estil: Barroc, Tematica: Fruita, Sala: Sala Luisillo de Macaco, Rellevancia: 30
+  4. La historia de llama --> 62 minuts
+     Informacio de la obra:
+     - Autor: Luisillo de Macaco, Epoca: Contemporanea, Estil: Barroc, Tematica: Paisatge, Sala: Sala Luisillo de Macaco, Rellevancia: 30
+  5. El carbassot fa el que pot --> 50 minuts
+     Informacio de la obra:
+     - Autor: Marcos Van Gal, Epoca: Contemporanea, Estil: Expressionisme, Tematica: Amor, Sala: Sala Contemporanea, Rellevancia: 23
+
+  Dia 2:
+  1. El colom de la platz --> 62 minuts
+     Informacio de la obra:
+     - Autor: Luisillo de Macaco, Epoca: Contemporanea, Estil: Expressionisme, Tematica: Noblesa, Sala: Sala Luisillo de Macaco, Rellevancia: 28
+  2. La banana --> 62 minuts
+     Informacio de la obra:
+     - Autor: Nil Velazquez, Epoca: Moderna, Estil: Manierisme, Tematica: Fruita, Sala: Sala Contemporanea, Rellevancia: 28
+  3. Zeus i Odin --> 62 minuts
+     Informacio de la obra:
+     - Autor: Nil Velazquez, Epoca: Moderna, Estil: Romanic, Tematica: Mitologia, Sala: Sala Contemporanea, Rellevancia: 26
+  4. Tsunami en Madrid --> 62 minuts
+     Informacio de la obra:
+     - Autor: Aitor Menta, Epoca: Contemporanea, Estil: Manierisme, Tematica: Carrers, Sala: Sala Contemporanea, Rellevancia: 24
+  5. La vida en confinament --> 50 minuts
+     Informacio de la obra:
+     - Autor: Mono Liso, Epoca: Moderna, Estil: Barroc, Tematica: Odi, Sala: Sala Moderna, Rellevancia: 22
+
+  Dia 3:
+  1. La primera musa --> 62 minuts
+     Informacio de la obra:
+     - Autor: Vincent Van Lluis, Epoca: Moderna, Estil: Preromanic, Tematica: Amor, Sala: Sala Moderna, Rellevancia: 23
+  2. Lluvias en la Calle --> 62 minuts
+     Informacio de la obra:
+     - Autor: Aitor Menta, Epoca: Contemporanea, Estil: Manierisme, Tematica: Carrers, Sala: Sala Contemporanea, Rellevancia: 22
+  3. Al pot petit hi ha la bona confitura --> 50 minuts
+     Informacio de la obra:
+     - Autor: Marcos Van Gal, Epoca: Contemporanea, Estil: Cubisme, Tematica: Noblesa, Sala: Sala Contemporanea, Rellevancia: 19
+  4. El verde caracol --> 37 minuts
+     Informacio de la obra:
+     - Autor: Merino Xavier, Epoca: Contemporanea, Estil: Manierisme, Tematica: Naturalesa, Sala: Sala Contemporanea, Rellevancia: 17
+  5. El deu dels mars i del desert --> 37 minuts
+     Informacio de la obra:
+     - Autor: Al Ramar Abdul Tula, Epoca: Art Antic, Estil: Rococo, Tematica: Religio, Sala: Sala Art Antic, Rellevancia: 17
+  6. La dama especial --> 37 minuts
+     Informacio de la obra:
+     - Autor: Arnau Rembrandt, Epoca: Baixa Edat Mitjana, Estil: Romanic, Tematica: Retrat, Sala: Sala Baixa Edat Mitjana, Rellevancia: 17
+
+  Dia 4:
+  1. Efectes visuals --> 37 minuts
+     Informacio de la obra:
+     - Autor: Merino Xavier, Epoca: Contemporanea, Estil: Manierisme, Tematica: Naturalesa, Sala: Sala Contemporanea, Rellevancia: 16
+  2. Bodegon con empanada de pavo --> 37 minuts
+     Informacio de la obra:
+     - Autor: Arnau Rembrandt, Epoca: Baixa Edat Mitjana, Estil: Romanic, Tematica: Fruita, Sala: Sala Baixa Edat Mitjana, Rellevancia: 16
+  3. Desert incendiat --> 25 minuts
+     Informacio de la obra:
+     - Autor: Al Ramar Abdul Tula, Epoca: Art Antic, Estil: Rococo, Tematica: Odi, Sala: Sala Art Antic, Rellevancia: 8
+  4. Solo carne --> 25 minuts
+     Informacio de la obra:
+     - Autor: Al Ramar Abdul Tula, Epoca: Art Antic, Estil: Rococo, Tematica: Odi, Sala: Sala Art Antic, Rellevancia: 6
+
+ Esperem que us agradin les obres i, benviguts a MUSEU FIB.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+JOC DE PROVA 8:
+GRUP GRAN CONEIXEDOR D'ART QUE NO TE PREFERENCIES
+
+Com l'hem escollit: Calia incloure un cas extrem on qui visita el museu és un grup gran que respon a totes les preguntes be i no te cap preferencia
+Explicacio sortida: El temps de visita de les obres es adequat al tipus de grup ja que el temps de visita es superior en relacio a si fos un grup mes petit i es correspon amb les preferencies (en aquest cas, cap preferencia),
+                    i, donat que no tenen cap preferencia, en el temps que marca es considera suficient per veure totes les obres. Estar clar que el cas de introduir 4 dies i 5 hores cada dia es un cas molt extrem i si
+                    realment fos un grup gran pero sense cap preferencia, en un cas real no anirien tants dies al museu. Probablement 2 dies i 2 hores cada dia.
+                    L'ordre de la rellevancia es correspon amb la rellevancia implicita de les obres i
+                    ordena les obres per sala i aprofita el maxim que pot el temps.
+                    Donat el temps del que disposa el grup i el teps seleccionat, el grup acaba les obres i, per tant, es mostra el missatge.
+
+Input:
+60
+4
+5
+1
+1
+3
+3
+4
+1
+2
+3
+1
+1
+0
+0
+0
+0
+
+Output:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Les nostres recomanacions son:
+
+  Dia 1:
+  1. Los panas --> 12 minuts
+     Informacio de la obra:
+     - Autor: Jordi Gorchs, Epoca: Alta Edat Mitjana, Estil: Preromanic, Tematica: Retrat, Sala: Sala Alta Edat Mitjana, Rellevancia: 10
+  2. C'pillins --> 12 minuts
+     Informacio de la obra:
+     - Autor: Jordi Gorchs, Epoca: Alta Edat Mitjana, Estil: Renaixement, Tematica: Mitologia, Sala: Sala Alta Edat Mitjana, Rellevancia: 10
+  3. La Chant de Macaco --> 12 minuts
+     Informacio de la obra:
+     - Autor: Luisillo de Macaco, Epoca: Contemporanea, Estil: Barroc, Tematica: Fruita, Sala: Sala Luisillo de Macaco, Rellevancia: 10
+  4. La historia de llama --> 12 minuts
+     Informacio de la obra:
+     - Autor: Luisillo de Macaco, Epoca: Contemporanea, Estil: Barroc, Tematica: Paisatge, Sala: Sala Luisillo de Macaco, Rellevancia: 10
+  5. El colom de la platz --> 12 minuts
+     Informacio de la obra:
+     - Autor: Luisillo de Macaco, Epoca: Contemporanea, Estil: Expressionisme, Tematica: Noblesa, Sala: Sala Luisillo de Macaco, Rellevancia: 8
+  6. La banana --> 12 minuts
+     Informacio de la obra:
+     - Autor: Nil Velazquez, Epoca: Moderna, Estil: Manierisme, Tematica: Fruita, Sala: Sala Contemporanea, Rellevancia: 8
+  7. El carbassot fa el que pot --> 12 minuts
+     Informacio de la obra:
+     - Autor: Marcos Van Gal, Epoca: Contemporanea, Estil: Expressionisme, Tematica: Amor, Sala: Sala Contemporanea, Rellevancia: 8
+  8. El verde caracol --> 12 minuts
+     Informacio de la obra:
+     - Autor: Merino Xavier, Epoca: Contemporanea, Estil: Manierisme, Tematica: Naturalesa, Sala: Sala Contemporanea, Rellevancia: 7
+  9. Efectes visuals --> 12 minuts
+     Informacio de la obra:
+     - Autor: Merino Xavier, Epoca: Contemporanea, Estil: Manierisme, Tematica: Naturalesa, Sala: Sala Contemporanea, Rellevancia: 6
+  10. Zeus i Odin --> 12 minuts
+     Informacio de la obra:
+     - Autor: Nil Velazquez, Epoca: Moderna, Estil: Romanic, Tematica: Mitologia, Sala: Sala Contemporanea, Rellevancia: 6
+  11. Al pot petit hi ha la bona confitura --> 12 minuts
+     Informacio de la obra:
+     - Autor: Marcos Van Gal, Epoca: Contemporanea, Estil: Cubisme, Tematica: Noblesa, Sala: Sala Contemporanea, Rellevancia: 4
+  12. Tsunami en Madrid --> 12 minuts
+     Informacio de la obra:
+     - Autor: Aitor Menta, Epoca: Contemporanea, Estil: Manierisme, Tematica: Carrers, Sala: Sala Contemporanea, Rellevancia: 4
+  13. Lluvias en la Calle --> 12 minuts
+     Informacio de la obra:
+     - Autor: Aitor Menta, Epoca: Contemporanea, Estil: Manierisme, Tematica: Carrers, Sala: Sala Contemporanea, Rellevancia: 2
+  14. El deu dels mars i del desert --> 12 minuts
+     Informacio de la obra:
+     - Autor: Al Ramar Abdul Tula, Epoca: Art Antic, Estil: Rococo, Tematica: Religio, Sala: Sala Art Antic, Rellevancia: 7
+  15. Desert incendiat --> 12 minuts
+     Informacio de la obra:
+     - Autor: Al Ramar Abdul Tula, Epoca: Art Antic, Estil: Rococo, Tematica: Odi, Sala: Sala Art Antic, Rellevancia: 3
+  16. Solo carne --> 12 minuts
+     Informacio de la obra:
+     - Autor: Al Ramar Abdul Tula, Epoca: Art Antic, Estil: Rococo, Tematica: Odi, Sala: Sala Art Antic, Rellevancia: 1
+  17. La dama especial --> 12 minuts
+     Informacio de la obra:
+     - Autor: Arnau Rembrandt, Epoca: Baixa Edat Mitjana, Estil: Romanic, Tematica: Retrat, Sala: Sala Baixa Edat Mitjana, Rellevancia: 7
+  18. Bodegon con empanada de pavo --> 12 minuts
+     Informacio de la obra:
+     - Autor: Arnau Rembrandt, Epoca: Baixa Edat Mitjana, Estil: Romanic, Tematica: Fruita, Sala: Sala Baixa Edat Mitjana, Rellevancia: 6
+  19. La vida en confinament --> 12 minuts
+     Informacio de la obra:
+     - Autor: Mono Liso, Epoca: Moderna, Estil: Barroc, Tematica: Odi, Sala: Sala Moderna, Rellevancia: 7
+  20. La primera musa --> 12 minuts
+     Informacio de la obra:
+     - Autor: Vincent Van Lluis, Epoca: Moderna, Estil: Preromanic, Tematica: Amor, Sala: Sala Moderna, Rellevancia: 3
+
+  ~~  Ens sap greu, al MUSEU FIB no ens queden mes quadres per recomanar.  ~~
+  ~~      Si voleu, podeu anar a la botiga del MUSEU FIB, o al bar FIB     ~~
+
+ Esperem que us agradin les obres i, benviguts a MUSEU FIB.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+ACLARIMENT FINAL
+Si tinguessim un museu mes gran, on hi hagues mes quadres a mostrar (molts mes), tots aquells casos on es mostra el missatge que no queden mes quadres per recomanar
+no apareixerien. Tot i aixo, considerem que tambe forma part de la realitat no tenir quadres infinits a recomanar i tenir un limit.
