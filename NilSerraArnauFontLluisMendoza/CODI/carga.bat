@@ -1,0 +1,8 @@
+(clear)
+(load "practica2.pont")
+(load "funciones.clp")
+(load "templates.clp")
+(load "reglas.clp")
+(reset)
+(load-instances "practica2.pins")
+(run)

@@ -1,0 +1,52 @@
+JOC DE PROVA 5:
+
+GRUP MITJA NORMAL AMB ALGUNES PREFERENCIES
+
+Com l'hem escollit: Calia incloure com respondria el sistema en un cas on anes un grup mitja que respon algunes de les preguntes be i te algunes preferencies
+Explicacio sortida: El temps de visita de les obres es adequat al tipus de grup ja que el temps de visita es superior en relacio a si fos un grup mes petit i es correspon amb les preferencies,
+                    l'ordre de la rellevancia es correspon amb la rellevancia implicita de les obres sumada a les preferencies del grup i
+                    ordena les obres per sala i aprofita el maxim que pot el temps.
+                    Donat el temps del que disposa el grup i el teps seleccionat, el grup no acaba les obres.
+
+Input:
+26
+2
+1
+1
+1
+3
+3
+1
+1
+2
+4
+1
+2
+4 5
+8
+2 5 8
+4
+
+Output:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Les nostres recomanacions son:
+
+  Dia 1:
+  1. C'pillins --> 30 minuts
+     Informacio de la obra:
+     - Autor: Jordi Gorchs, Epoca: Alta Edat Mitjana, Estil: Renaixement, Tematica: Mitologia, Sala: Sala Alta Edat Mitjana, Rellevancia: 20
+  2. Los panas --> 20 minuts
+     Informacio de la obra:
+     - Autor: Jordi Gorchs, Epoca: Alta Edat Mitjana, Estil: Preromanic, Tematica: Retrat, Sala: Sala Alta Edat Mitjana, Rellevancia: 15
+
+  Dia 2:
+  1. Zeus i Odin --> 30 minuts
+     Informacio de la obra:
+     - Autor: Nil Velazquez, Epoca: Moderna, Estil: Romanic, Tematica: Mitologia, Sala: Sala Contemporanea, Rellevancia: 16
+  2. La banana --> 20 minuts
+     Informacio de la obra:
+     - Autor: Nil Velazquez, Epoca: Moderna, Estil: Manierisme, Tematica: Fruita, Sala: Sala Contemporanea, Rellevancia: 13
+
+ Esperem que us agradin les obres i, benviguts a MUSEU FIB.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

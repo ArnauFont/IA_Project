@@ -1,0 +1,10 @@
+PER AL CODI:
+l'arxiu carga.bat carrega tot els fitxers necessaris al IDE de clips, si es vol fer amb consola, cal incroure els paths totals.
+per passar el fitxer generat per protege de la ontologia, llegir ComPassarDotAImatge.txt
+
+PER ALS JOCS DE PROVA:
+hi ha 8 jocs de prova, cadascun d'ells especifica l'input donat, el motiu pel qual l'hem escollit, l'explicació de la sortida i l'output del sistema
+
+PER A LA ONTOLOGIA:
+per a una visualitzacio inicial complerta, obrir index.html
+es poden visualitzar totes les classes, documentades, amb els seus atributs, i tambe totes les instancies de cada classe

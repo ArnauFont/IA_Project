@@ -1,0 +1,3 @@
+ACLARIMENT FINAL
+Si tinguessim un museu mes gran, on hi hagues mes quadres a mostrar (molts mes), tots aquells casos on es mostra el missatge que no queden mes quadres per recomanar
+no apareixerien. Tot i aixo, considerem que tambe forma part de la realitat no tenir quadres infinits a recomanar i tenir un limit.

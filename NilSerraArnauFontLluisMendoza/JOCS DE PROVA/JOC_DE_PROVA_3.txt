@@ -1,0 +1,53 @@
+JOC DE PROVA 3:
+
+CAS REAL UN JOVE
+
+Com l'hem escollit: Calia incloure com respondria el sistema en un cas on anes una unica persona que no respon totes les preguntes del test be i te algunes preferencies
+Explicacio sortida: El temps de visita de les obres es adequat al tipus d'usuari ja que en aquest cas tot i no tenir un coineixement de 10, té les seves preferencies,
+                    l'ordre de la rellevancia es correspon amb la rellevancia implicita de les obres i les preferencies de l'usuari i
+                    ordena les obres per sala i aprofita el maxim que pot el temps.
+                    Donat que l'usuari volia anar 2 dies i 1 hores no es pot acabar totes les obres del museu, per tant no apareix el missatge que apareixia en el cas anterior.
+
+
+Input:
+1
+2
+1
+1
+1
+3
+3
+1
+1
+2
+4
+1
+2
+4 5 6 9
+8 5 2
+2 6 9
+4 5 8
+
+Output:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Les nostres recomanacions son:
+
+  Dia 1:
+  1. La dama especial --> 34 minuts
+     Informacio de la obra:
+     - Autor: Arnau Rembrandt, Epoca: Baixa Edat Mitjana, Estil: Romanic, Tematica: Retrat, Sala: Sala Baixa Edat Mitjana, Rellevancia: 22
+  2. La Chant de Macaco --> 25 minuts
+     Informacio de la obra:
+     - Autor: Luisillo de Macaco, Epoca: Contemporanea, Estil: Barroc, Tematica: Fruita, Sala: Sala Luisillo de Macaco, Rellevancia: 20
+
+  Dia 2:
+  1. Zeus i Odin --> 34 minuts
+     Informacio de la obra:
+     - Autor: Nil Velazquez, Epoca: Moderna, Estil: Romanic, Tematica: Mitologia, Sala: Sala Contemporanea, Rellevancia: 21
+  2. La historia de llama --> 25 minuts
+     Informacio de la obra:
+     - Autor: Luisillo de Macaco, Epoca: Contemporanea, Estil: Barroc, Tematica: Paisatge, Sala: Sala Luisillo de Macaco, Rellevancia: 20
+
+ Esperem que us agradin les obres i, benviguts a MUSEU FIB.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

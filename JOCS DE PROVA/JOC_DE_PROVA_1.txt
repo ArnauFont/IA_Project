@@ -1,0 +1,100 @@
+JOC DE PROVA 1:
+
+CONEIXEDOR D'ART
+
+Com l'hem escollit: Calia incloure com respondria el sistema en un cas on anes una unica persona que respon totes les preguntes del test be i te algunes preferencies
+Explicacio sortida: El temps de visita de les obres es adequat al tipus d'usuari, l'ordre de la rellevancia es correspon amb les preferencies i ordena les obres per sala i aprofita el maxim que pot el temps.
+                    Donat que l'usuari volia anar 4 dies i 5 hores i la suma dels temps de visita no es superior, apareix el missatge de que no queden més obres.
+Input:
+1
+4
+5
+1
+1
+3
+3
+4
+1
+2
+3
+1
+1
+1 2 3 4 5
+1 2 5 6
+1 4 7 8
+5 8 9
+
+Output:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Les nostres recomanacions son:
+
+  Dia 1:
+  1. El carbassot fa el que pot --> 40 minuts
+     Informacio de la obra:
+     - Autor: Marcos Van Gal, Epoca: Contemporanea, Estil: Expressionisme, Tematica: Amor, Sala: Sala Contemporanea, Rellevancia: 23
+  2. Al pot petit hi ha la bona confitura --> 40 minuts
+     Informacio de la obra:
+     - Autor: Marcos Van Gal, Epoca: Contemporanea, Estil: Cubisme, Tematica: Noblesa, Sala: Sala Contemporanea, Rellevancia: 19
+  3. La banana --> 30 minuts
+     Informacio de la obra:
+     - Autor: Nil Velazquez, Epoca: Moderna, Estil: Manierisme, Tematica: Fruita, Sala: Sala Contemporanea, Rellevancia: 18
+  4. El deu dels mars i del desert --> 40 minuts
+     Informacio de la obra:
+     - Autor: Al Ramar Abdul Tula, Epoca: Art Antic, Estil: Rococo, Tematica: Religio, Sala: Sala Art Antic, Rellevancia: 22
+  5. Desert incendiat --> 40 minuts
+     Informacio de la obra:
+     - Autor: Al Ramar Abdul Tula, Epoca: Art Antic, Estil: Rococo, Tematica: Odi, Sala: Sala Art Antic, Rellevancia: 18
+  6. El colom de la platz --> 30 minuts
+     Informacio de la obra:
+     - Autor: Luisillo de Macaco, Epoca: Contemporanea, Estil: Expressionisme, Tematica: Noblesa, Sala: Sala Luisillo de Macaco, Rellevancia: 18
+  7. La dama especial --> 30 minuts
+     Informacio de la obra:
+     - Autor: Arnau Rembrandt, Epoca: Baixa Edat Mitjana, Estil: Romanic, Tematica: Retrat, Sala: Sala Baixa Edat Mitjana, Rellevancia: 17
+  8. La vida en confinament --> 30 minuts
+     Informacio de la obra:
+     - Autor: Mono Liso, Epoca: Moderna, Estil: Barroc, Tematica: Odi, Sala: Sala Moderna, Rellevancia: 17
+  9. Los panas --> 20 minuts
+     Informacio de la obra:
+     - Autor: Jordi Gorchs, Epoca: Alta Edat Mitjana, Estil: Preromanic, Tematica: Retrat, Sala: Sala Alta Edat Mitjana, Rellevancia: 15
+
+  Dia 2:
+  1. Zeus i Odin --> 30 minuts
+     Informacio de la obra:
+     - Autor: Nil Velazquez, Epoca: Moderna, Estil: Romanic, Tematica: Mitologia, Sala: Sala Contemporanea, Rellevancia: 16
+  2. Tsunami en Madrid --> 30 minuts
+     Informacio de la obra:
+     - Autor: Aitor Menta, Epoca: Contemporanea, Estil: Manierisme, Tematica: Carrers, Sala: Sala Contemporanea, Rellevancia: 14
+  3. Lluvias en la Calle --> 30 minuts
+     Informacio de la obra:
+     - Autor: Aitor Menta, Epoca: Contemporanea, Estil: Manierisme, Tematica: Carrers, Sala: Sala Contemporanea, Rellevancia: 12
+  4. El verde caracol --> 20 minuts
+     Informacio de la obra:
+     - Autor: Merino Xavier, Epoca: Contemporanea, Estil: Manierisme, Tematica: Naturalesa, Sala: Sala Contemporanea, Rellevancia: 12
+  5. Efectes visuals --> 20 minuts
+     Informacio de la obra:
+     - Autor: Merino Xavier, Epoca: Contemporanea, Estil: Manierisme, Tematica: Naturalesa, Sala: Sala Contemporanea, Rellevancia: 11
+  6. Solo carne --> 40 minuts
+     Informacio de la obra:
+     - Autor: Al Ramar Abdul Tula, Epoca: Art Antic, Estil: Rococo, Tematica: Odi, Sala: Sala Art Antic, Rellevancia: 16
+  7. La Chant de Macaco --> 20 minuts
+     Informacio de la obra:
+     - Autor: Luisillo de Macaco, Epoca: Contemporanea, Estil: Barroc, Tematica: Fruita, Sala: Sala Luisillo de Macaco, Rellevancia: 15
+  8. La historia de llama --> 20 minuts
+     Informacio de la obra:
+     - Autor: Luisillo de Macaco, Epoca: Contemporanea, Estil: Barroc, Tematica: Paisatge, Sala: Sala Luisillo de Macaco, Rellevancia: 15
+  9. C'pillins --> 20 minuts
+     Informacio de la obra:
+     - Autor: Jordi Gorchs, Epoca: Alta Edat Mitjana, Estil: Renaixement, Tematica: Mitologia, Sala: Sala Alta Edat Mitjana, Rellevancia: 15
+  10. La primera musa --> 30 minuts
+     Informacio de la obra:
+     - Autor: Vincent Van Lluis, Epoca: Moderna, Estil: Preromanic, Tematica: Amor, Sala: Sala Moderna, Rellevancia: 13
+  11. Bodegon con empanada de pavo --> 20 minuts
+     Informacio de la obra:
+     - Autor: Arnau Rembrandt, Epoca: Baixa Edat Mitjana, Estil: Romanic, Tematica: Fruita, Sala: Sala Baixa Edat Mitjana, Rellevancia: 11
+
+  ~~  Ens sap greu, al MUSEU FIB no ens queden mes quadres per recomanar.  ~~
+  ~~      Si voleu, podeu anar a la botiga del MUSEU FIB, o al bar FIB     ~~
+
+ Esperem que us agradin les obres i, benviguts a MUSEU FIB.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
